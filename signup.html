@@ -38,10 +38,17 @@
       <h1 class="text-center">Sign up</h1>
       <div class="form-signin">
         <form action="/profile.html">
+
+            <div class="form-floating mb-4">
+            <input type="text" class="form-control" id="floatingInput" placeholder="name@example.com" maxlength="100" required>
+            <label for="floatingInput">Name</label>
+            </div>
+
             <div class="form-floating">
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" maxlength="100" required>
             <label for="floatingInput">Email</label>
             </div>
+
             <div class="form-floating">
             <input type="password" class="form-control my-3" id="floatingPassword" placeholder="Password" maxlength="20" pattern="^.(?=.{7,})(?=.[a-zA-Z]).*$" title="Password must be at least 8 characters long" required>
             <label class="was-validated" for="floatingPassword">Password</label>
