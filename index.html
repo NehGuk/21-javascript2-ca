@@ -4,12 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Home</title>
     <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="/dist/css/styles.css">
 </head>
 <body>
-    <h1>Index</h1>
+<!-- NAV -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <!-- <a class="navbar-brand" href="#">Logo</a> -->
+          <a class="navbar-brand" href="/index.html"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-record-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Logout</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+                <img src="/assets/image-sample.jpg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+            </span>
+          </div>
+        </div>
+      </nav>
+<!-- TOP CONTENT -->
+    <h1>Home</h1>
+
+
+<!-- FOOTER -->
+    <div class="container">
+        <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="/index.html" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="/profile.html" class="nav-link px-2 text-muted">Profile</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Logout</a></li>
+        </ul>
+        <p class="text-center text-muted">Henri Kugler | JavaScript 2 Course Assignment | 2022</p>
+        </footer>
+    </div>
     
 </body>
 </html>
