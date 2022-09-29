@@ -1,6 +1,10 @@
 @charset "UTF-8";
-/* Bootstrap edited styles */ /* COLOUR PALETTE */
-/* Background colour */ /* Bootstrap default styles */
+/* Bootstrap edited styles */
+/* COLOUR PALETTE */
+/* Background colour */
+.navbar {
+  background-color: red;
+} /* Bootstrap default styles */
 /*!
  * Bootstrap  v5.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors

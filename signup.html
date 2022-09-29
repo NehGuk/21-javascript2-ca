@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="/scripts/signup.js"></script> -->
+    <link rel="stylesheet" href="/dist/css/styles.css">
+
+</head>
+<body>
+<!-- NAV -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          
+          <a class="navbar-brand" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-record-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-8 3a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/></svg></a>
+          
+          <div class="collapse navbar-collapse" id="navbarText">
+            <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile.html">Profile</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/login.html">Login</a>
+              </li>
+            </ul> -->
+          
+          </div>
+        </div>
+      </nav>
+<!-- TOP CONTENT -->
+    
+    <!-- SIGNUP FORM -->
+    <div class="container px-4 py-5 col-lg-4 col-sm-12 text-center">
+      <h1 class="text-center">Sign up</h1>
+      <div class="form-signin">
+        <form action="" id="signupform">
+
+            <!-- name -->
+            <div class="form-floating mb-4">
+            <input type="text" class="form-control" id="floatingInput" placeholder="Ola Nordmann" maxlength="100" required>
+            <label for="floatingInput" id="nametest">Name</label>
+            </div>
+
+            <!-- email -->
+            <div class="form-floating">
+            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" maxlength="100" required>
+            <label for="floatingInput">Email</label>
+            </div>
+
+            <!-- password -->
+            <div class="form-floating">
+            <input type="password" class="form-control my-3" id="floatingPassword" placeholder="Password" maxlength="20" pattern="^.(?=.{7,})(?=.[a-zA-Z]).*$" title="Password must be at least 8 characters long" required>
+            <label class="was-validated" for="floatingPassword">Password</label>
+            </div>
+        
+            <!-- signup button -->
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+            <br>
+            <br>
+
+            <!-- Already registered message -->
+            <div class="checkbox mb-3">
+              <label>
+                  <a href="/login.html">Already registered? Login!</a>
+              </label>
+            </div>
+
+            <!-- Already registered message -->
+            <!-- <div class="checkbox mb-3">
+              <label>
+                  <p href="/login.html">Email address already registered.</p>
+              </label>
+            </div> -->
+            
+        </form>
+      </div>
+    </div>
+    
+    <!-- TEST -->
+    <div>
+      <form id="contactForm">
+        <div>
+            <label>
+                First name (required)
+                <input name="firstName" id="firstName" />
+            </label>
+            <div class="form-error" id="firstNameError">Please enter your first name</div>
+        </div>
+
+        <div>
+            <label>
+                Last name (minimum 4 characters)
+                <input name="lastName" id="lastName" />
+            </label>
+            <div class="form-error" id="lastNameError">Your last name must be at least 4 characters</div>
+        </div>
+
+        <div>
+            <label>
+                Email (required)
+                <input name="email" id="email" />
+            </label>
+            <div class="form-error" id="emailError">Please enter a valid email address</div>
+        </div>
+
+        <button>Submit</button>
+    </form>
+
+
+
+    </div>
+
+
+<!-- FOOTER -->
+    <div class="container">
+        <footer class="py-3 my-4">
+        <!-- <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="/index.html" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="/profile.html" class="nav-link px-2 text-muted">Profile</a></li>
+            <li class="nav-item"><a href="/login.html" class="nav-link px-2 text-muted">Login</a></li>
+        </ul> -->
+        <p class="text-center text-muted">Henri Kugler | JavaScript 2 Course Assignment | 2022</p>
+        </footer>
+    </div>
+    
+</body>
+</html>
