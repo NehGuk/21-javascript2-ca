@@ -30,8 +30,8 @@ const userToRegister = {
 
 // Register user function
 async function registerUser(url, userData) {
-    console.log(userData);
-    console.log(url);
+    // console.log(userData);
+    // console.log(url);
 
     try {
         const postData = {
@@ -144,3 +144,5 @@ function validateEmail(email) {
     const patternMatches = regEx.test(email);
     return patternMatches;
 }
+
+// Testing
