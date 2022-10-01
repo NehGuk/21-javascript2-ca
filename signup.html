@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign up</title>
     <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="/scripts/signup.js"></script> -->
+    <script defer type="module" src="/scripts/signup.mjs"></script>
     <link rel="stylesheet" href="/dist/css/styles.css">
 
 </head>
@@ -43,20 +43,20 @@
 
             <!-- name -->
             <div class="form-floating mb-4">
-            <input type="text" class="form-control" id="floatingInput" placeholder="Ola Nordmann" maxlength="100" required>
-            <label for="floatingInput" id="nametest">Name</label>
+            <input type="text" name="name" id="username" class="form-control" placeholder="Ola Nordmann" maxlength="100" pattern="^[\w]+$" title="User name must not contain punctuation symbols apart from underscore" required>
+            <label for="name">Username</label>
             </div>
 
             <!-- email -->
             <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" maxlength="100" required>
-            <label for="floatingInput">Email</label>
+            <input type="email" name="email" id="email" class="form-control" placeholder="name@example.com" maxlength="100" pattern="^[\w\-.]+@(stud.)?noroff.no$" title="Please enter a valid stud.noroff.no or noroff.no email address" required>
+            <label for="email">Email</label>
             </div>
 
             <!-- password -->
             <div class="form-floating">
-            <input type="password" class="form-control my-3" id="floatingPassword" placeholder="Password" maxlength="20" pattern="^.(?=.{7,})(?=.[a-zA-Z]).*$" title="Password must be at least 8 characters long" required>
-            <label class="was-validated" for="floatingPassword">Password</label>
+            <input type="password" name="password" id="password" class="form-control my-3" placeholder="Password" maxlength="20" pattern="^.(?=.{7,})(?=.[a-zA-Z]).*$" title="Password must be at least 8 characters long" required>
+            <label class="was-validated" for="password">Password</label>
             </div>
         
             <!-- signup button -->
@@ -64,58 +64,23 @@
             <br>
             <br>
 
-            <!-- Already registered message -->
-            <div class="checkbox mb-3">
-              <label>
-                  <a href="/login.html">Already registered? Login!</a>
-              </label>
-            </div>
-
-            <!-- Already registered message -->
-            <!-- <div class="checkbox mb-3">
+            <!-- Already registered error message -->
+            <div class="checkbox mb-3 register-error-message">
               <label>
                   <p href="/login.html">Email address already registered.</p>
               </label>
-            </div> -->
-            
+            </div>
+
+            <!-- Click here to login -->
+            <div class="checkbox mb-3 login-link">
+              <label>
+                  <a href="/login.html">Click here to login!</a>
+              </label>
+            </div>
+
         </form>
       </div>
     </div>
-    
-    <!-- TEST -->
-    <div>
-      <form id="contactForm">
-        <div>
-            <label>
-                First name (required)
-                <input name="firstName" id="firstName" />
-            </label>
-            <div class="form-error" id="firstNameError">Please enter your first name</div>
-        </div>
-
-        <div>
-            <label>
-                Last name (minimum 4 characters)
-                <input name="lastName" id="lastName" />
-            </label>
-            <div class="form-error" id="lastNameError">Your last name must be at least 4 characters</div>
-        </div>
-
-        <div>
-            <label>
-                Email (required)
-                <input name="email" id="email" />
-            </label>
-            <div class="form-error" id="emailError">Please enter a valid email address</div>
-        </div>
-
-        <button>Submit</button>
-    </form>
-
-
-
-    </div>
-
 
 <!-- FOOTER -->
     <div class="container">
