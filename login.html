@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer type="module" src="/scripts/login.mjs"></script>
     <link rel="stylesheet" href="/dist/css/styles.css">
 </head>
 <body>
@@ -31,12 +32,55 @@
         </div>
       </nav>
 <!-- TOP CONTENT -->
+
+      <!-- SIGNUP FORM -->
+      <div class="container px-4 py-5 col-lg-4 col-sm-12 text-center">
+        <h1 class="text-center">Login</h1>
+        <div class="form-login">
+          <form action="" id="loginform">
+
+              <!-- email -->
+              <div class="form-floating">
+              <input type="email" name="email" id="email" class="form-control" placeholder="name@example.com" maxlength="100" pattern="^[\w\-.]+@(stud.)?noroff.no$" title="Please enter a valid stud.noroff.no or noroff.no email address" required>
+              <label for="email">Email</label>
+              </div>
+
+              <!-- password -->
+              <div class="form-floating">
+              <input type="password" name="password" id="password" class="form-control my-3" placeholder="Password" maxlength="20" pattern="^.(?=.{7,})(?=.[a-zA-Z]).*$" title="Password must be at least 8 characters long" required>
+              <label class="was-validated" for="password">Password</label>
+              </div>
+          
+              <!-- login button -->
+              <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+              <br>
+              <br>
+
+              <!-- Login error message -->
+              <div class="checkbox mb-3 login-error-message">
+                <label>
+                    <p href="/login.html">Some login error message.</p>
+                </label>
+              </div>
+
+              <!-- Click here to sign up -->
+              <div class="checkbox mb-3 login-link">
+                <label>
+                    <a href="/signup.html">Click here to sign up!</a>
+                </label>
+              </div>
+
+          </form>
+        </div>
+      </div>
+
+
     
-    <!-- LOGIN FORM -->
-    <div class="container px-4 py-5 col-lg-4 col-sm-12 text-center">
+    <!-- OLD LOGIN FORM -->
+    <!-- <div class="container px-4 py-5 col-lg-4 col-sm-12 text-center">
       <h1 class="text-center">Login</h1>
       <div class="form-signin">
-        <form action="/profile.html">
+        <form action="" id="loginform">
             <div class="form-floating">
             <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" maxlength="100" required>
             <label for="floatingInput">Email</label>
@@ -57,7 +101,7 @@
             
         </form>
       </div>
-    </div>
+    </div> -->
 
 
 <!-- FOOTER -->

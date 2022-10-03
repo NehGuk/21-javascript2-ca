@@ -17,9 +17,10 @@ form.addEventListener("submit", createAndRegisterUser);
 
 function createAndRegisterUser(event) {
     event.preventDefault();
+    // creating a user object from the input fields
     const myFormData = new FormData(event.target);
     const userProfile = Object.fromEntries(myFormData.entries());
-    console.log(userProfile);
+    // API call to register user
     registerUser(registerURL, userProfile);
 }
 

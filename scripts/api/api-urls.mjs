@@ -6,6 +6,7 @@ export const API_BASE_URL = `https://nf-api.onrender.com`;
 export const registerURL = `${API_BASE_URL}/api/v1/social/auth/register`;
 
 // login
+export const loginURL = `${API_BASE_URL}/api/v1/social/auth/login`;
 
 // etc
 
