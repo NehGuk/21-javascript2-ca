@@ -1,4 +1,4 @@
-export async function registerUser(url, userData) {
+export async function loginUser(url, userData) {
     try {
         const postData = {
             method: 'POST',
@@ -6,14 +6,21 @@ export async function registerUser(url, userData) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(userData),
-        };
-        const response = await fetch(url, postData);
+        }
+        const response = await fetch(url, postData);    
         const json = await response.json();
-        console.log(json);
-
+        
+        // getting and storing the access token
+        const accessToken = json.accessToken;
+        localStorage.setItem("accessToken", accessToken);
+        
         // getting and storing username
         const userName = json.name;
         localStorage.setItem("userName", userName);
+
+        // getting and storing access token
+        const token = json.accessToken;
+        localStorage.setItem("accessToken", token);
 
         // direct user to Profile page after login in AND add the user name to URL as a query string
         location.href = `/profile.html?profile=${userName}`
@@ -21,14 +28,8 @@ export async function registerUser(url, userData) {
     } catch(error) {
         console.log(error);
     }
+
 };
 
 // Example:
-// registerUser(registerURL, userProfile);
-
-
-    
-    
-
-
- 
+// loginUser(loginURL, userToLogin);
