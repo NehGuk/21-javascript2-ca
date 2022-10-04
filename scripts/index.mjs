@@ -8,10 +8,6 @@ import { allPostsURL } from "./api/api-urls.mjs";
 import { getPosts } from "./api/api-call-get-posts.mjs";
 
 // Function to create the post HTML
-function displayAllPosts() {
-    getPosts(allPostsURL);
-
-};
-displayAllPosts();
+getPosts(allPostsURL);
 
 
