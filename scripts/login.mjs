@@ -7,7 +7,7 @@ import { loginUser } from "./api/api-call-login.mjs";
 
 // Form variables
 const form = document.querySelector("#loginform");
-const loginErrorMessage = document.querySelector(".login-error-message");
+export const loginErrorMessage = document.querySelector(".login-error-message");
 
 // Hide the error message by default
 loginErrorMessage.style.display = "none";
@@ -23,4 +23,8 @@ function checkAndLoginUser(event) {
     // API call to login user
     loginUser(loginURL, userToLogin);
     // store token
+
+    // direct user to Profile page after login in
+    location.href = form.action;
+
 };

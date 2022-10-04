@@ -8,7 +8,10 @@ export const registerURL = `${API_BASE_URL}/api/v1/social/auth/register`;
 // login
 export const loginURL = `${API_BASE_URL}/api/v1/social/auth/login`;
 
-// etc
+// get profile
+
+// get all posts
+export const allPostsURL = `${API_BASE_URL}/api/v1/social/posts`;
 
 
 // initial register function trial

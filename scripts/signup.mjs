@@ -20,8 +20,12 @@ function createAndRegisterUser(event) {
     // creating a user object from the input fields
     const myFormData = new FormData(event.target);
     const userProfile = Object.fromEntries(myFormData.entries());
+    
     // API call to register user
     registerUser(registerURL, userProfile);
+
+    // Send user to Profile page after signing in
+    location.href = form.action;
 }
 
 
