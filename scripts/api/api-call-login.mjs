@@ -22,7 +22,7 @@ export async function loginUser(url, userData) {
         const token = json.accessToken;
         localStorage.setItem("accessToken", token);
 
-        // direct user to Profile page after login in AND add the user name to as a query string
+        // direct user to Profile page after login in AND add the user name to URL as a query string
         location.href = `/profile.html?profile=${userName}`
 
     } catch(error) {

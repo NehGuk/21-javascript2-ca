@@ -15,7 +15,7 @@ export async function registerUser(url, userData) {
         const userName = json.name;
         localStorage.setItem("userName", userName);
 
-        // direct user to Profile page after login in AND add the user name to as a query string
+        // direct user to Profile page after login in AND add the user name to URL as a query string
         location.href = `/profile.html?profile=${userName}`
 
     } catch(error) {
