@@ -24,8 +24,6 @@ function createAndRegisterUser(event) {
     // API call to register user
     registerUser(registerURL, userProfile);
 
-    // Send user to Profile page after signing in
-    location.href = form.action;
 }
 
 

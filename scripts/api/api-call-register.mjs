@@ -8,9 +8,16 @@ export async function registerUser(url, userData) {
             body: JSON.stringify(userData),
         };
         const response = await fetch(url, postData);
-        console.log(response);
         const json = await response.json();
         console.log(json);
+
+        // getting and storing username
+        const userName = json.name;
+        localStorage.setItem("userName", userName);
+
+        // direct user to Profile page after login in AND add the user name to as a query string
+        location.href = `/profile.html?profile=${userName}`
+
     } catch(error) {
         console.log(error);
     }

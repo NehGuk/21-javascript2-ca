@@ -22,9 +22,8 @@ function checkAndLoginUser(event) {
     const userToLogin = Object.fromEntries(myFormData.entries());
     // API call to login user
     loginUser(loginURL, userToLogin);
-    // store token
 
     // direct user to Profile page after login in
-    location.href = form.action;
+    // location.href = form.action;
 
 };

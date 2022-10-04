@@ -7,24 +7,23 @@ export async function loginUser(url, userData) {
             },
             body: JSON.stringify(userData),
         }
-        const response = await fetch(url, postData);
-        // console.log(response);
+        const response = await fetch(url, postData);    
         const json = await response.json();
-        // console.log(json);
         
         // getting and storing the access token
-        // console.log(json.accessToken);
         const accessToken = json.accessToken;
         localStorage.setItem("accessToken", accessToken);
         
-        // getting and storing the username
+        // getting and storing username
         const userName = json.name;
-        console.log(userName);
         localStorage.setItem("userName", userName);
 
-        // add the user name to as a query string
-        // make the form action direct to the profile page
-        //
+        // getting and storing access token
+        const token = json.accessToken;
+        localStorage.setItem("accessToken", token);
+
+        // direct user to Profile page after login in AND add the user name to as a query string
+        location.href = `/profile.html?profile=${userName}`
 
     } catch(error) {
         console.log(error);

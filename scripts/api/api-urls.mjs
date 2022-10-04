@@ -14,8 +14,8 @@ export const loginURL = `${API_BASE_URL}/api/v1/social/auth/login`;
 export const allPostsURL = `${API_BASE_URL}/api/v1/social/posts`;
 
 
-// initial register function trial
 
-    // Once new user is created, do an API call to register the new user
+
+
 
    
