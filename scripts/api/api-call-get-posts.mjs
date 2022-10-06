@@ -1,6 +1,3 @@
-// const API_BASE_URL = `https://nf-api.onrender.com`;
-// const allPostsURL = `${API_BASE_URL}/api/v1/social/posts`;
-
 export async function getPosts(url) {
     try {
         const token = localStorage.getItem("accessToken");
