@@ -2,22 +2,24 @@
 export const API_BASE_URL = `https://nf-api.onrender.com`;
 
 // END POINTS
-// register
+// Register
 export const registerURL = `${API_BASE_URL}/api/v1/social/auth/register`;
 
-// login
+// Login
 export const loginURL = `${API_BASE_URL}/api/v1/social/auth/login`;
 
-// get profile
+// Get profile
 //
 
-// get all posts
+// Get all posts
 export const allPostsURL = `${API_BASE_URL}/api/v1/social/posts`;
 
-// get single post
+// Get single post
 export const singlePostURL = `${API_BASE_URL}/api/v1/social/posts/`; //<id>
 export const extra = `?_author=true&_comments=true&_reactions=true`;
 
+// Create new post
+export const createPostURL = `${API_BASE_URL}/api/v1/social/posts`;
 
 
 
