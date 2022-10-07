@@ -53,19 +53,19 @@
     <form action="/index.html" id="add-post-form">
 
       <!-- title -->
-      <div class="form-floating mb-4">
+      <div class="">
       <input type="text" name="title" id="title" class="form-control" placeholder="Title" maxlength="300" title="Please add a title to your post" required>
-      <label for="title">Title</label>
+      <label for="title"></label>
       </div>
 
       <!-- content -->
-      <div class="form-floating">
-      <textarea type="text" name="content" id="content" class="form-control" placeholder="What have you been up to? Please write your post here." maxlength="100" pattern="^[\w\-.]+@(stud.)?noroff.no$" title="Please enter a valid stud.noroff.no or noroff.no email address" required></textarea>
-      <label for="content">Write your post here</label>
+      <div class="">
+      <textarea type="text" name="content" id="content" class="form-control" placeholder="What have you been up to? Please write your post here." maxlength="1000000" rows="5" required></textarea>
+      <label for="content"></label>
       </div>
 
       <!-- image url -->
-      <div class="form-floating mb-4 mt-4">
+      <div class="form-floating mb-4">
         <input type="text" name="media" id="media" class="form-control" placeholder="Media URL" maxlength="1000" pattern="^[\w]+$" title="Instructions about the image format">
         <label for="name">Image URL</label>
         </div>
