@@ -15,18 +15,16 @@ function createPostAndSendEntry(event) {
     console.log("Clicked!");
     
     // Create object from form fields
-
-    const postContent = {
-
-    };
+    const myFormData = new FormData(event.target);
+    const postContent = Object.fromEntries(myFormData.entries());
+    console.log(postContent);
 
     // Call function to create new entry
-    createNewEntry();
-    console.log(newEntryURL);
-
-
-
+    createNewEntry(newEntryURL, postContent);
+    
     // Refresh the post feed somehow
+    location.href = form.action;
 
+    // another option is event.target.reset();, and then refresh the feed by calling the function again.
 
 };
