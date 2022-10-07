@@ -1,5 +1,4 @@
 // API URLs
-import { API_BASE_URL } from "./api/api-urls.mjs";
 import { loginURL } from "./api/api-urls.mjs";
 
 // Function to login user
