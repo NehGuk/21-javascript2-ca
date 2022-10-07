@@ -18,8 +18,8 @@ export const allPostsURL = `${API_BASE_URL}/api/v1/social/posts`;
 export const singlePostURL = `${API_BASE_URL}/api/v1/social/posts/`; //<id>
 export const extra = `?_author=true&_comments=true&_reactions=true`;
 
-// Create new post
-export const createPostURL = `${API_BASE_URL}/api/v1/social/posts`;
+// Create new entry
+export const newEntryURL = `${API_BASE_URL}/api/v1/social/posts`;
 
 
 

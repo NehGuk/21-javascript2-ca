@@ -7,7 +7,7 @@
     <title>Home</title>
     <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script defer type="module" src="/scripts/index-feed.mjs"></script>
-    <script defer type="module" src="/scripts/index-create-post.mjs"></script>
+    <script defer type="module" src="/scripts/index-create-new-entry.mjs"></script>
     <link rel="stylesheet" href="/dist/css/styles.css">
 </head>
 <body>
@@ -65,9 +65,9 @@
       </div>
 
       <!-- image url -->
-      <div class="form-floating mb-4">
-        <input type="text" name="media" id="media" class="form-control" placeholder="Media URL" maxlength="1000" pattern="^[\w]+$" title="Instructions about the image format">
-        <label for="name">Image URL</label>
+      <div class="mb-4"> <!-- before: form-floating -->
+        <input type="text" name="media" id="media" class="form-control" placeholder="Media URL" maxlength="1000" title="Instructions about the image format">
+        <label for="name"></label>
         </div>
       
   
