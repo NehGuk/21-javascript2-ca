@@ -7,4 +7,4 @@ export async function getUserProfile(url) {
 
 }
 
-getUserProfile();
+//getUserProfile();
