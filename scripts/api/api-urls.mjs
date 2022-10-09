@@ -21,6 +21,8 @@ export const extra = `?_author=true&_comments=true&_reactions=true`;
 // Create new entry
 export const newEntryURL = `${API_BASE_URL}/api/v1/social/posts`;
 
+// Delete entry
+export const deleteEntryURL = `${API_BASE_URL}/api/v1/social/posts/`; //<id>
 
 
 
