@@ -1,11 +1,11 @@
-// PUT request
 
-import { getPost } from "./api-call-get-post.mjs";
+import { getPost, postURL } from "./api-call-get-post.mjs";
 
 import { URLToBeUpdated } from "../post-update.mjs";
 
 import { postContainer } from "../post-update.mjs";
 import { buttonContainer } from "../post-update.mjs";
+import { postID } from "../post-update.mjs";
 export async function updateEntry(url) {
     try {
         
@@ -102,27 +102,13 @@ export async function updateEntry(url) {
                 const response2 = await fetch(url, putData);
                 const editedPost = (await response2).json();
 
+                // Reload updated post? How?
+                location.reload();
 
             }
             sendEditedEntry(URLToBeUpdated, updatedPostContent);
-
-            // Reload updated post?
-            //console.log("Yes");
-            //location.reload();
-            console.log(post.id);
-
-            //location.href = "/index.html";
             
-            
-        }
-        
-
-
-
-
-        
-
-            
+        }    
 
     } catch(error) {
         console.log(error);

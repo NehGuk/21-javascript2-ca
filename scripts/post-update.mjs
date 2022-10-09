@@ -1,7 +1,7 @@
 // Get the post ID from the URL query string
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
-const postID = urlParams.get("id");
+export const postID = urlParams.get("id");
 
 // API URLs
 import { updateEntryURL } from "./api/api-urls.mjs";
