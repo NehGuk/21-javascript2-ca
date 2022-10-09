@@ -5,7 +5,3 @@ import { getPost } from "./api/api-call-get-post.mjs";
 import { postURL } from "./api/api-call-get-post.mjs";
 
 getPost(postURL);
-
-
-// Delete post
-

@@ -7,6 +7,7 @@
     <title>Post page</title>
     <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script defer type="module" src="/scripts/post.mjs"></script>
+    <script defer type="module" src="/scripts/post-delete.mjs"></script>
     <link rel="stylesheet" href="/dist/css/styles.css">
 </head>
 <body>
@@ -75,11 +76,9 @@
 
 <!-- Buttons -->
 <div class="container px-4 py-0" id="button-container">
-  <button type="button" class="btn btn-primary btn-sm update-button">Update post</button>
-  <button type="button" class="btn btn-secondary btn-sm" id="delete-button">Delete post</button>                    
+  <button type="button"  class="btn btn-primary btn-sm update-button" id="update-button">Update post</button>
+  <button type="button" action="/index.html" class="btn btn-secondary btn-sm" id="delete-button">Delete post</button>                    
 </div>
-
-
 
 <!-- FOOTER -->
     <div class="container">

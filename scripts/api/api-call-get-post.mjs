@@ -13,6 +13,7 @@ export const postURL = `${singlePostURL}${postID}${extra}`;
 // Create function to fetch the post data
 export async function getPost(url) {
     try {
+        const userName = localStorage.getItem("userName");
         const token = localStorage.getItem("accessToken");
         const fetchingOptions = {
             method: 'GET',
@@ -59,7 +60,20 @@ export async function getPost(url) {
                 </div>
                 </div>
             </div>
-            ` 
+            `;
+            console.log(post.author.name);
+            console.log(userName);
+            const buttonContainer = document.querySelector("#button-container");
+            if (post.author.name === userName) {
+                
+                buttonContainer.style.display = "block";
+
+                
+
+            } else {
+
+            };
+            
         };
         displayPost();    
         
