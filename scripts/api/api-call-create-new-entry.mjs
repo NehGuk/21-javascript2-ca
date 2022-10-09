@@ -1,15 +1,21 @@
 export async function sendNewPost(url, newPost) {
     try {
-        console.log("Sending new post");
-        console.log(url);
-        console.log(newPost);
-        
+        const token = localStorage.getItem("accessToken");
+        const postData = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: `Bearer ${token}`,
+                
+            },
+            body: JSON.stringify(newPost),
+        };
+
+        const response = await fetch(url, postData);
+        const myPost = await response.json();
 
     } catch(error) {
         console.log(error);
     }
-    
-    
-
 };
 

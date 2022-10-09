@@ -15,6 +15,7 @@ const form = document.querySelector("#add-post-form");
 // Form event listener
 form.addEventListener("submit", createAndSendPost);
 
+
 function createAndSendPost(event) {
     event.preventDefault();
     
@@ -31,9 +32,7 @@ function createAndSendPost(event) {
     event.target.reset();
 
     // Refresh the post feed
-    getPosts(allPostsURL);
-    
-
-
+    // Call the getPosts function again?
+    // Or use location.href = form.action;?
 };
 
