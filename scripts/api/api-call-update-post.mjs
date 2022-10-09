@@ -9,7 +9,6 @@ import { postID } from "../post-update.mjs";
 export async function updateEntry(url) {
     try {
         
-
         // Get data from current post
         function fetchCurrentPost() {
             console.log("Getting post data");
@@ -32,14 +31,12 @@ export async function updateEntry(url) {
         console.log(post);
         console.log(post.title);
 
-        
         // Create form and populate it with post info
         postContainer.innerHTML = `
         <div class="container px-4 py-5 col-lg-5 col-sm-12">
         <h1 class="text-center pb-3">Edit post</h1>
     
         <form id="update-post-form">
-    
           <!-- title -->
           <div class="">
           <input type="text" name="title" id="title" class="form-control" value="${post.title}" maxlength="300" title="Please add a title to your post" required>
@@ -58,18 +55,13 @@ export async function updateEntry(url) {
             <label for="name"></label>
             </div>
           
-      
           <!-- update -->
           <button class="w-100 btn btn-lg btn-primary" type="submit">Update</button>
           <br>
           <br>
-    
-      </form>
-        
-      </div>
-        
+        </form>
+        </div>
         `;
-
 
         // Add event listener to the update button
         const updateForm = document.querySelector("#update-post-form");
@@ -107,9 +99,7 @@ export async function updateEntry(url) {
 
             }
             sendEditedEntry(URLToBeUpdated, updatedPostContent);
-            
         }    
-
     } catch(error) {
         console.log(error);
     }
