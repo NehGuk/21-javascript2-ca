@@ -21,3 +21,4 @@ deleteButton.addEventListener("click", clickAndDeletePost);
 function clickAndDeletePost() {
     deleteEntry(urlToBeDeleted);
 }
+

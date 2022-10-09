@@ -2,6 +2,8 @@
 import { singlePostURL } from "./api-urls.mjs";
 import { extra } from "./api-urls.mjs";
 
+
+
 // Get the post ID from the URL query string
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -9,10 +11,12 @@ const postID = urlParams.get("id");
 
 // Create specific post URL based on post ID
 export const postURL = `${singlePostURL}${postID}${extra}`;
+export const postURLToUpdate = `${singlePostURL}${postID}`;
 
 // Create function to fetch the post data
 export async function getPost(url) {
     try {
+
         const userName = localStorage.getItem("userName");
         const token = localStorage.getItem("accessToken");
         const fetchingOptions = {
@@ -73,9 +77,12 @@ export async function getPost(url) {
             } else {
 
             };
+
+            
             
         };
         displayPost();    
+        
         
 
     } catch(error) {
