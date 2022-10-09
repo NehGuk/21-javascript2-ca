@@ -1,25 +1,39 @@
+
+// API URLs
+import { newEntryURL } from "./api/api-urls.mjs";
+
+// API call
 import { sendNewPost } from "./api/api-call-create-new-entry.mjs";
 
+// Variables and function to refresh the feed after post is new post is submitted
+import { getPosts } from "./api/api-call-get-posts.mjs";
+import { allPostsURL } from "./api/api-urls.mjs";
 
 // Form variables
 const form = document.querySelector("#add-post-form");
-console.log(form);
 
 // Form event listener
 form.addEventListener("submit", createAndSendPost);
 
-async function createAndSendPost(event) {
+function createAndSendPost(event) {
     event.preventDefault();
-    event.target.reset();
+    
     console.log("Working");
 
     // Create post object from form fields
     const myFormData = new FormData(event.target);
     const postContent = Object.fromEntries(myFormData.entries());
-    console.log(postContent);
 
     // Send post object to API
-    sendNewPost();
+    sendNewPost(newEntryURL, postContent);
+    
+    // Clear form fields
+    event.target.reset();
+
+    // Refresh the post feed
+    getPosts(allPostsURL);
+    
+
 
 };
 
