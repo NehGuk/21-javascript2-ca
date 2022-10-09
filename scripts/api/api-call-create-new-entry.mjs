@@ -14,6 +14,9 @@ export async function sendNewPost(url, newPost) {
         const response = await fetch(url, postData);
         const myPost = await response.json();
 
+        // Refreshing the page
+        location.href = "/index.html";
+
     } catch(error) {
         console.log(error);
     }

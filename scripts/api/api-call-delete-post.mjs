@@ -1,9 +1,6 @@
 export async function deleteEntry(url) {
     try {
-        console.log("Eita");
-
         const token = localStorage.getItem("accessToken");
-
         const deleteData = {
             method: 'DELETE',
             headers: {
