@@ -25,7 +25,7 @@ export const newEntryURL = `${API_BASE_URL}/api/v1/social/posts`;
 export const deleteEntryURL = `${API_BASE_URL}/api/v1/social/posts/`; //<id>
 
 // Update entry
-export const updateEntryURL = `${API_BASE_URL}/api/v1/social/posts/`: //<id>
+export const updateEntryURL = `${API_BASE_URL}/api/v1/social/posts/`; //<id>
 
 
 
