@@ -89,21 +89,33 @@ export async function updateEntry(url) {
                 console.log(url);
                 console.log(updatedPostContent);
 
-                const response2 = fetch(url, putData);
+                const putData = {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                        
+                    },
+                    body: JSON.stringify(updatedContent),
+                };
+
+                const response2 = await fetch(url, putData);
                 const editedPost = (await response2).json();
 
 
             }
             sendEditedEntry(URLToBeUpdated, updatedPostContent);
 
-
-
-
-
-            // Reload updated post
-            console.log("Yes");
+            // Reload updated post?
+            //console.log("Yes");
             //location.reload();
+            console.log(post.id);
+
+            //location.href = "/index.html";
+            
+            
         }
+        
 
 
 
