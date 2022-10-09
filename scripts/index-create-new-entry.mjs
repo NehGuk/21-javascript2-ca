@@ -1,30 +1,38 @@
+
 // API URLs
 import { newEntryURL } from "./api/api-urls.mjs";
 
-// Function to create new entry
-import { createNewEntry } from "./api/api-call-create-new-entry.mjs";
+// API call
+import { sendNewPost } from "./api/api-call-create-new-entry.mjs";
+
+// Variables and function to refresh the feed after post is new post is submitted
+import { getPosts } from "./api/api-call-get-posts.mjs";
+import { allPostsURL } from "./api/api-urls.mjs";
 
 // Form variables
 const form = document.querySelector("#add-post-form");
 
-// Add event listener to PUBLISH button
-form.addEventListener("submit", createPostAndSendEntry);
+// Form event listener
+form.addEventListener("submit", createAndSendPost);
 
-function createPostAndSendEntry(event) {
+
+function createAndSendPost(event) {
     event.preventDefault();
-    console.log("Clicked!");
     
-    // Create object from form fields
+    console.log("Working");
+
+    // Create post object from form fields
     const myFormData = new FormData(event.target);
     const postContent = Object.fromEntries(myFormData.entries());
-    console.log(postContent);
 
-    // Call function to create new entry
-    createNewEntry(newEntryURL, postContent);
+    // Send post object to API
+    sendNewPost(newEntryURL, postContent);
     
-    // Refresh the post feed somehow
-    location.href = form.action;
+    // Clear form fields
+    event.target.reset();
 
-    // another option is event.target.reset();, and then refresh the feed by calling the function again.
-
+    // Refresh the post feed
+    // Call the getPosts function again?
+    // Or use location.href = form.action;?
 };
+
