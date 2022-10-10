@@ -9,7 +9,9 @@ export const registerURL = `${API_BASE_URL}/api/v1/social/auth/register`;
 export const loginURL = `${API_BASE_URL}/api/v1/social/auth/login`;
 
 // Get profile
-//
+export const userProfileURL = `${API_BASE_URL}/api/v1/social/profiles/`; //<user>
+export const extraProfileURL = `?_posts=true&_following=true&_followers=true`;
+
 
 // Get all posts
 export const allPostsURL = `${API_BASE_URL}/api/v1/social/posts`;
