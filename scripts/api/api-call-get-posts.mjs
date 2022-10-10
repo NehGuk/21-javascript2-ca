@@ -18,13 +18,21 @@ export async function getPosts(url) {
             const postsContainer = document.querySelector(".posts-container");
             postsContainer.innerHTML = "";
 
-            for (let i = 0; i <= posts.length; i++) {
+            for (let i = 0; i < posts.length; i++) {
 
                 // If the post contains no media, use a default image
                 if (!posts[i].media) {
                     posts[i].media = "/assets/image-sample.jpg";
                 };
-            
+                if (!posts[i].author.avatar) {
+                    posts[i].author.avatar = "/assets/image-sample.jpg";
+                };
+
+        
+                // Formatting the dates
+                const formattedDate = new Date(posts[i].created).toGMTString();
+
+                // Populating the HTML container
                 postsContainer.innerHTML += `
                 <div class="col">
                     <div class="card h-100">
@@ -34,8 +42,9 @@ export async function getPosts(url) {
                         <p class="card-text">${posts[i].body}</p>
                         </div>
                         <div class="card-footer">
-                            
-                            <small class="text-muted">${posts[i].created}</small>
+                        <img src="${posts[i].author.avatar}" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                        <small class="text-muted"><strong>${posts[i].author.name}</strong>&emsp;</small>
+                            <small class="text-muted">${formattedDate}</small>
                         </div>
                         <div class="card-footer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
@@ -53,12 +62,8 @@ export async function getPosts(url) {
                 `;
             }
         
-
         };
         displayAllPosts();
-
-
-
 
     } catch(error) {
         console.log(error);

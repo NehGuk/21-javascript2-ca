@@ -1,3 +1,6 @@
+// add date format
+
+
 // Get singlePost base URL
 import { singlePostURL } from "./api-urls.mjs";
 import { extra } from "./api-urls.mjs";
@@ -35,6 +38,10 @@ export async function getPost(url) {
             if (!post.media) {
                 post.media = "/assets/image-sample.jpg";
             };
+
+            // Formatting the dates
+            const formattedDate = new Date(post.created).toGMTString();
+
             postContainer.innerHTML = "";
             postContainer.innerHTML = `
             <div class="row row-cols-1 row-cols-md-1 g-4 posts-container">
@@ -48,7 +55,7 @@ export async function getPost(url) {
                     <div class="card-footer">
                         <img src="/assets/image-sample.jpg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
                         <small class="text-muted"><strong>${post.author.name}</strong>&emsp;</small>
-                        <small class="text-muted">${post.created}</small>
+                        <small class="text-muted">${formattedDate}</small>
                     </div>
                     <div class="card-footer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
