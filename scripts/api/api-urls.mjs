@@ -15,6 +15,8 @@ export const extraProfileURL = `?_posts=true&_following=true&_followers=true`;
 
 // Get all posts
 export const allPostsURL = `${API_BASE_URL}/api/v1/social/posts?_author=true`;
+export const allPostsURLDesc = `${allPostsURL}&sort=created&sortOrder=desc`;
+export const allPostsURLAsc = `${allPostsURL}&sort=created&sortOrder=asc`;
 
 // Get single post
 export const singlePostURL = `${API_BASE_URL}/api/v1/social/posts/`; //<id>
