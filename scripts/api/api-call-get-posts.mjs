@@ -1,3 +1,6 @@
+// add date formats
+
+
 export async function getPosts(url) {
     try {
         const token = localStorage.getItem("accessToken");
