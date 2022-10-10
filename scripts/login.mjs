@@ -1,3 +1,5 @@
+localStorage.clear();
+
 // API URLs
 import { loginURL } from "./api/api-urls.mjs";
 

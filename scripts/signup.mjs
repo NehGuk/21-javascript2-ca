@@ -1,3 +1,5 @@
+localStorage.clear();
+
 // API URLs
 import { API_BASE_URL } from "./api/api-urls.mjs";
 import { registerURL } from "./api/api-urls.mjs";
