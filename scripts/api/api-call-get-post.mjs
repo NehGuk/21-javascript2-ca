@@ -38,6 +38,9 @@ export async function getPost(url) {
             if (!post.media) {
                 post.media = "/assets/image-sample.jpg";
             };
+            if (!post.author.avatar) {
+                post.author.avatar = "/assets/image-sample.jpg";
+            };
 
             // Formatting the dates
             const formattedDate = new Date(post.created).toGMTString();
@@ -53,7 +56,7 @@ export async function getPost(url) {
                     <p class="card-text">${post.body}</p>
                     </div>
                     <div class="card-footer">
-                        <img src="/assets/image-sample.jpg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                        <img src="${post.author.avatar}" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
                         <small class="text-muted"><strong>${post.author.name}</strong>&emsp;</small>
                         <small class="text-muted">${formattedDate}</small>
                     </div>
