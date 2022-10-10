@@ -1,6 +1,3 @@
-// add date formats
-
-
 export async function getPosts(url) {
     try {
         const token = localStorage.getItem("accessToken");
@@ -27,7 +24,12 @@ export async function getPosts(url) {
                 if (!posts[i].media) {
                     posts[i].media = "/assets/image-sample.jpg";
                 };
+
             
+                // Formatting the dates
+                const formattedDate = new Date(posts[i].created).toGMTString();
+
+                // Populating the HTML container
                 postsContainer.innerHTML += `
                 <div class="col">
                     <div class="card h-100">
@@ -38,7 +40,7 @@ export async function getPosts(url) {
                         </div>
                         <div class="card-footer">
                             
-                            <small class="text-muted">${posts[i].created}</small>
+                            <small class="text-muted">${formattedDate}</small>
                         </div>
                         <div class="card-footer">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
@@ -56,12 +58,8 @@ export async function getPosts(url) {
                 `;
             }
         
-
         };
         displayAllPosts();
-
-
-
 
     } catch(error) {
         console.log(error);
