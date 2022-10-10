@@ -22,13 +22,20 @@ export async function loginUser(url, userData) {
         const token = json.accessToken;
         localStorage.setItem("accessToken", token);
 
-        // direct user to Profile page after login in AND add the user name to URL as a query string
-        location.href = `/profile.html?userName=${userName}`
-
+        // Display login error message, if necessary
+        const loginErrorMessage = document.querySelector("#login-error-message");
+        
+        if (json.message === "Invalid email or password") {
+            loginErrorMessage.innerHTML = `
+                <p>${json.message}</p>
+            `;
+        } else {
+            loginErrorMessage.innerHTML = ``;
+            location.href = `/profile.html?userName=${userName}`
+        }        
     } catch(error) {
         console.log(error);
     }
-
 };
 
 // Example:
