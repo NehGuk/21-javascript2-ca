@@ -24,7 +24,6 @@ export async function getPosts(url) {
                 if (!posts[i].media) {
                     posts[i].media = "/assets/image-sample.jpg";
                 };
-
             
                 // Formatting the dates
                 const formattedDate = new Date(posts[i].created).toGMTString();
@@ -39,7 +38,8 @@ export async function getPosts(url) {
                         <p class="card-text">${posts[i].body}</p>
                         </div>
                         <div class="card-footer">
-                            
+                        <!-- <img src="/assets/image-sample.jpg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white"> -->
+                        <small class="text-muted"><strong>${posts[i].owner}</strong>&emsp;</small>
                             <small class="text-muted">${formattedDate}</small>
                         </div>
                         <div class="card-footer">
