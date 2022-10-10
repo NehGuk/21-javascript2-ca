@@ -15,12 +15,16 @@ const buttonOldestFirst = document.querySelector("#filter-asc");
 // Button filter: oldest first
 buttonOldestFirst.addEventListener("click", filterAsc);
 function filterAsc() {
+    buttonOldestFirst.classList.add("active");
+    buttonNewestFirst.classList.remove("active");
     getPosts(allPostsURLAsc);
 };
 
 // Button filter: newest first
 buttonNewestFirst.addEventListener("click", filterDesc);
 function filterDesc() {
+    buttonNewestFirst.classList.add("active");
+    buttonOldestFirst.classList.remove("active");
     getPosts(allPostsURLDesc);
 };
 
