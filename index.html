@@ -7,6 +7,7 @@
     <title>Home</title>
     <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script defer type="module" src="/scripts/index-feed.mjs"></script>
+    <script defer type="module" src="/scripts/index-feed-filters.mjs"></script>
     <script defer type="module" src="/scripts/index-create-new-entry.mjs"></script>
     <link rel="stylesheet" href="/dist/css/styles.css">
 </head>
@@ -96,8 +97,8 @@
   <!-- FILTERS -->
   <div class="container col-lg-6 col-sm-12 text-center">
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-light">Newest first</button>
-      <button type="button" class="btn btn-light">Oldest first</button>  
+      <button type="button" class="btn btn-light" id="filter-desc">Newest first</button>
+      <button type="button" class="btn btn-light" id="filter-asc">Oldest first</button>  
     </div>
   </div>
 
