@@ -15,10 +15,8 @@ export async function getUserProfile(url) {
         console.log("Workinggggg yeeeap");
         const response = await fetch(url, fetchingOptions);
         const userProfile = await response.json();
-        console.log(response);
-        console.log(userProfile);
-        console.log(userProfile.name);
-        console.log(userProfile.email);
+        //console.log(response);
+        //console.log(userProfile);
 
         async function displayUserProfile() {
 
