@@ -25,12 +25,8 @@ export async function getUserPosts(url) {
             
             myPostsContainer.innerHTML = "";    
             
-            for (let i = 0; i <= userProfile.posts.length; i++) {
-                console.log(i);
-                console.log(userProfile.posts[i].title);
-                console.log(userProfile.posts[i].owner);
-
-
+            for (let i = 0; i < userProfile.posts.length; i++) {
+            
                 // if statement here for default image?
                 if (!userProfile.posts[i].media) {
                     userProfile.posts[i].media = "/assets/image-sample.jpg";
