@@ -1,11 +1,11 @@
+// Importing display posts function
+import { displayAllPosts } from "./index-display-all-posts.mjs";
 
 // Function to get the API data (all posts)
 import { allPostsURL } from "./api/api-urls.mjs";
 import { getPosts } from "./api/api-call-get-posts.mjs";
 
-// Importing display posts function
-import { displayAllPosts } from "./api/api-call-get-posts.mjs";
-
+// Calling the function to lead the posts
 getPosts(allPostsURL);
 
 // Search bar variables
@@ -26,6 +26,8 @@ searchInput.addEventListener("input", (event) => {
 
         if (currentPost.title.includes(value) || currentPost.body.includes(value) || currentPost.author.name.includes(value)) {
             filteredArray.push(currentPost);
+        } else {
+            console.log("Woooooops, no results");
         }
 
     }
