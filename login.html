@@ -46,7 +46,7 @@
 
               <!-- password -->
               <div class="form-floating">
-              <input type="password" name="password" id="password" class="form-control my-3" placeholder="Password" maxlength="20" pattern="^.(?=.{7,})(?=.[a-zA-Z]).*$" title="Password must be at least 8 characters long" required>
+              <input type="password" name="password" id="password" class="form-control my-3" placeholder="Password" minlength="8" maxlength="20" pattern="^.(?=.{7,})(?=.[a-zA-Z]).*$" title="Password must be between 8 and 20 characters long" required>
               <label class="was-validated" for="password">Password</label>
               </div>
           
