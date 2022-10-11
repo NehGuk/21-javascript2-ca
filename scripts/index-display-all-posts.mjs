@@ -21,7 +21,7 @@ export function displayAllPosts(posts) {
         postsContainer.innerHTML += `
         <div class="col">
             <div class="card h-100">
-                <a href="/post.html?id=${posts[i].id}"><img src="${posts[i].media}" class="card-img-top" alt="..."></a>
+                <a href="/post.html?id=${posts[i].id}"><img src="${posts[i].media}" class="card-img-top" alt="..." style="width: 100%; height: 15rem; object-fit: cover;"></a>
                 <div class="card-body">
                 <a href="/post.html?id=${posts[i].id}" style="text-decoration: none"><h5 class="card-title">${posts[i].title}</h5></a>
                 <p class="card-text">${posts[i].body}</p>
