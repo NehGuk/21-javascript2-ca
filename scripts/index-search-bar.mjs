@@ -42,6 +42,8 @@ searchInput.addEventListener("input", (event) => {
 
 });
 
+// Clear button
+
 
 
 
