@@ -26,8 +26,16 @@ searchInput.addEventListener("input", (event) => {
 
         if (currentPost.title.includes(value) || currentPost.body.includes(value) || currentPost.author.name.includes(value)) {
             filteredArray.push(currentPost);
-        } else {
+            const errorMessageContainer = document.querySelector("#error-message-container");
+            errorMessageContainer.innerHTML = ``;
+
+        } else if (filteredArray.length === 0) {
             console.log("Woooooops, no results");
+            console.log(filteredArray);
+            const errorMessageContainer = document.querySelector("#error-message-container");
+            errorMessageContainer.innerHTML = `
+                <p class="text-center text-secondary">Oooops! No posts match the search terms.</p>
+            `;
         }
 
     }
