@@ -9,6 +9,7 @@
     <script defer type="module" src="/scripts/index-feed.mjs"></script>
     <script defer type="module" src="/scripts/index-feed-filters.mjs"></script>
     <script defer type="module" src="/scripts/index-create-new-entry.mjs"></script>
+    <script defer type="module" src="/scripts/index-search-bar.mjs"></script>
     <link rel="stylesheet" href="/dist/css/styles.css">
 </head>
 <body>
@@ -79,8 +80,9 @@
   <!-- SEARCH BAR -->
   <div class="container px-4 py-5 col-lg-6 col-sm-12 text-center">
     <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
+      <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" id="search-input">
+      <!-- <label for="search-input">Label</label> -->
+      <button class="btn btn-outline-success" type="submit" id="search-button">Search</button>
     </form>
   </div>
 
