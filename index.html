@@ -9,6 +9,7 @@
     <script defer type="module" src="/scripts/index-feed.mjs"></script>
     <script defer type="module" src="/scripts/index-feed-filters.mjs"></script>
     <script defer type="module" src="/scripts/index-create-new-entry.mjs"></script>
+    <script defer type="module" src="/scripts/index-search-bar.mjs"></script>
     <link rel="stylesheet" href="/dist/css/styles.css">
 </head>
 <body>
@@ -79,8 +80,8 @@
   <!-- SEARCH BAR -->
   <div class="container px-4 py-5 col-lg-6 col-sm-12 text-center">
     <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
+      <input class="form-control me-2" type="search" placeholder="Search..." aria-label="Search" id="search-input">
+      <button class="btn btn-outline-success" type="submit" id="clear-button">Clear</button>
     </form>
   </div>
 
@@ -95,27 +96,13 @@
   
 
 <!-- POSTS FROM API -->
-<div class="container px-4 py-5 posts-container-main">
+<div class="container px-4 py-5" id="error-message-container">
+</div>
+
+<div class="container px-4 py-5 posts-container-main">  
   
   <div class="row row-cols-1 row-cols-md-3 g-4 posts-container">
-    
-    
-    <!-- LOADING SPINNER -->
-  <div class="d-flex py-5 justify-content-center">
-    <div class="spinner-grow text-secondary" role="status">
-    </div>
-  </div>
-  <!-- LOADING SPINNER -->
-  <div class="d-flex py-5 justify-content-center">
-    <div class="spinner-grow text-secondary" role="status">
-    </div>
-  </div>
-  <!-- LOADING SPINNER -->
-  <div class="d-flex py-5 justify-content-center">
-    <div class="spinner-grow text-secondary" role="status">
-    </div>
-  </div>
-  
+      
     <!-- POST TEMPLATE -->
     <!-- <div class="col">
       <div class="card h-100">
