@@ -43,9 +43,9 @@ searchInput.addEventListener("input", (event) => {
 });
 
 
-
-
-
-
-
+// Clear button
+/* clearButton.addEventListener("click", clearSearchField);    
+function clearSearchField() {
+    searchInput.value = "";
+} */
 
