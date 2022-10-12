@@ -7,6 +7,7 @@
     <title>Profile</title>
     <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script defer type="module" src="/scripts/profile.mjs"></script>
+    <script defer type="module" src="/scripts/profile-search-bar.mjs"></script>
     <link rel="stylesheet" href="/dist/css/styles.css">
 </head>
 <body>
@@ -89,13 +90,17 @@
   <!-- SEARCH BAR -->
   <div class="container px-4 py-5 col-lg-6 col-sm-12 text-center">
     <form class="d-flex" role="search">
-      <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Clear</button>
+      <input class="form-control me-2" type="text" placeholder="Search..." aria-label="Search" id="search-input">
+      <button class="btn btn-outline-success" type="button" id="clear-button">Clear</button>
     </form>
   </div>
 
-  <!-- POSTS -->
-  <div class="container px-4 py-5" >
+  <!-- USER POSTS -->
+
+  <div class="container px-4 py-3" id="error-message-container">
+  </div>
+
+  <div class="container px-4 py-5">
     
     <div class="row row-cols-1 row-cols-md-3 g-4" id="my-posts-container">
           
