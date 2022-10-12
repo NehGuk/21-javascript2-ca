@@ -24,6 +24,12 @@ function createAndSendPost(event) {
     // Create post object from form fields
     const myFormData = new FormData(event.target);
     const postContent = Object.fromEntries(myFormData.entries());
+    
+    if (!postContent.media) {
+        postContent.media = "https://www.discover-the-world.com/app/uploads/2019/08/norway-senja-aurora-sky-istk.jpg";
+        console.log("Oops, no image?");
+        console.log(postContent);
+    }
 
     // Send post object to API
     sendNewPost(newEntryURL, postContent);
