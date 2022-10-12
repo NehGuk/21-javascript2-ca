@@ -20,6 +20,9 @@ export async function getUserPosts(url) {
         console.log(response);
         //console.log(userProfile.posts);
         
+        // Creating a variable containing the posts array from the API call
+        window.userPosts = userPosts;
+
         displayUserPosts(userPosts);
     } catch(error) {
         console.log(error);
