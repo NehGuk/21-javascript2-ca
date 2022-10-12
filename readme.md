@@ -12,6 +12,3 @@ And to use Live Server run the command:
 `npm run watch`
 
 ---
-
-- Adding search bar to the posts on the profile page
-- Updated
