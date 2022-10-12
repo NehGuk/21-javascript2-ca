@@ -19,7 +19,7 @@ searchInput.addEventListener("input", (event) => {
     for (let i = 0; i < window.posts.length; i++) {
         let currentPost = window.posts[i];
 
-        if (currentPost.title.includes(value) || currentPost.body.includes(value) || currentPost.author.name.includes(value)) {
+        if (currentPost.title.toLowerCase().includes(value.toLowerCase()) || currentPost.body.toLowerCase().includes(value.toLowerCase()) || currentPost.author.name.toLowerCase().includes(value.toLowerCase())) {
             filteredArray.push(currentPost);
             errorMessageContainer.innerHTML = ``;
 
