@@ -1,0 +1,39 @@
+export function displayUserPosts(userPosts) {
+
+    const myPostsContainer = document.querySelector("#my-posts-container");
+    
+    myPostsContainer.innerHTML = "";    
+    
+    for (let i = 0; i < userPosts.length; i++) {
+    
+        // if statement here for default image?
+        if (!userPosts[i].media) {
+            userPosts[i].media = "/assets/image-sample.jpg";
+        };
+
+        // Formatting the dates
+        const formattedDate = new Date(userPosts[i].created).toLocaleString();
+
+        // Populate myPostsContainer
+        myPostsContainer.innerHTML += `
+        
+        <div class="col">
+        <div class="card h-100">
+        <a href="/post.html?id=${userPosts[i].id}"><img src="${userPosts[i].media}" class="card-img-top" alt="..." style="width: 100%; height: 15rem; object-fit: cover;"></a>
+        <div class="card-body">
+        <a href="/post.html?id=${userPosts[i].id}" style="text-decoration: none"><h5 class="card-title">${userPosts[i].title}</h5></a>
+            <p class="card-text">${userPosts[i].body}</p>
+        </div>
+        <div class="card-footer">
+            <img src="/assets/image-sample.jpg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+            <small class="text-muted"><strong>${userPosts[i].owner}</strong>&emsp;</small>
+            <small class="text-muted">${formattedDate}</small>
+        </div>
+        
+        </div>
+        </div>
+        `;
+            
+    }
+    
+}
