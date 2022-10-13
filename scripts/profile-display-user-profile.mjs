@@ -1,3 +1,14 @@
+const userName = localStorage.getItem("userName");
+
+// Creating API URL to send avatar
+import { userAvatarURL } from "./api/api-urls.mjs";
+const avatarURLToSend = `${userAvatarURL}${userName}/media`;
+console.log(avatarURLToSend);
+
+// Function to sent avatar
+import { sendAvatar } from "./api/api-call-send-avatar.mjs";
+
+
 export async function displayUserProfile(userProfile) {
 
     if (!userProfile.avatar) {
@@ -21,8 +32,8 @@ export async function displayUserProfile(userProfile) {
 
             <!-- image url input -->
             <div id="image-input">
-            <input type="url" name="media" id="media" class="form-control" placeholder="Media URL" maxlength="1000" title="Example: https://upload.wikimedia.org/wikipedia/commons/1/13/Red_Knot_1_-_Boat_Harbour.jpg">
-            <label for="name"></label>
+            <input type="url" name="media" id="avatar-media" class="form-control" placeholder="Media URL" maxlength="1000" title="Example: https://upload.wikimedia.org/wikipedia/commons/1/13/Red_Knot_1_-_Boat_Harbour.jpg">
+            <label for="media"></label>
             </div>
             
             <!-- change avatar button -->
@@ -41,19 +52,32 @@ export async function displayUserProfile(userProfile) {
         <hr>  
     `;
 
-    // Hiding image input and send-avatar button
-    const imageInput = document.querySelector("#image-input");
+    // Hiding by default: image input and send-avatar button
+    const form = document.querySelector("#form-change-avatar");
+    const imageInput = document.querySelector("#avatar-media");
     const changeAvatarButton = document.querySelector("#change-avatar-button");
     const sendAvatarButton = document.querySelector("#send-avatar-button");
+    
     imageInput.style.display = "none";
     sendAvatarButton.style.display = "none";
 
-    changeAvatarButton.addEventListener("click", displayFieldAndSendButton);
-    function displayFieldAndSendButton() {
+    changeAvatarButton.addEventListener("click", displayInputAndSendButton);
+    function displayInputAndSendButton() {
         imageInput.style.display = "block";
         sendAvatarButton.style.display = "inline-block";
         changeAvatarButton.style.display = "none";
     };
+
+    // Creating avatar string and sending it to API
+    form.addEventListener("submit", addAndSendAvatar);
+    function addAndSendAvatar(event) {
+        event.preventDefault();
+        const avatarMedia = imageInput.value;
+        localStorage.setItem("avatarMedia", avatarMedia);
+        sendAvatar();
+
+        location.href = "/profile.html"
+    }
 
 }
 
