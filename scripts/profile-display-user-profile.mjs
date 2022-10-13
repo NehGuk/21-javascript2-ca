@@ -3,7 +3,6 @@ const userName = localStorage.getItem("userName");
 // Creating API URL to send avatar
 import { userAvatarURL } from "./api/api-urls.mjs";
 const avatarURLToSend = `${userAvatarURL}${userName}/media`;
-console.log(avatarURLToSend);
 
 // Function to sent avatar
 import { sendAvatar } from "./api/api-call-send-avatar.mjs";
@@ -32,7 +31,7 @@ export async function displayUserProfile(userProfile) {
 
             <!-- image url input -->
             <div id="image-input">
-            <input type="url" name="media" id="avatar-media" class="form-control" placeholder="Media URL" maxlength="1000" title="Example: https://upload.wikimedia.org/wikipedia/commons/1/13/Red_Knot_1_-_Boat_Harbour.jpg">
+            <input type="url" name="avatar" id="avatar-media" class="form-control" placeholder="Media URL" maxlength="1000" title="Example: https://upload.wikimedia.org/wikipedia/commons/1/13/Red_Knot_1_-_Boat_Harbour.jpg">
             <label for="media"></label>
             </div>
             
@@ -68,15 +67,19 @@ export async function displayUserProfile(userProfile) {
         changeAvatarButton.style.display = "none";
     };
 
-    // Creating avatar string and sending it to API
+    // Creating avatar object and sending it to API
     form.addEventListener("submit", addAndSendAvatar);
     function addAndSendAvatar(event) {
         event.preventDefault();
-        const avatarMedia = imageInput.value;
-        localStorage.setItem("avatarMedia", avatarMedia);
-        sendAvatar();
+        //const avatarMedia = imageInput.value;
+        //localStorage.setItem("avatarMedia", avatarMedia);
+        const myFormData = new FormData(event.target);
+        const avatarMediaObject = Object.fromEntries(myFormData.entries());
+        console.log(avatarMediaObject);
+        
+        sendAvatar(avatarURLToSend, avatarMediaObject);
 
-        location.href = "/profile.html"
+        //location.href = "/profile.html"
     }
 
 }
