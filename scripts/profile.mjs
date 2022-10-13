@@ -1,6 +1,7 @@
 // API URL 
 import { userProfileURL } from "./api/api-urls.mjs";
 import { extraProfileURL } from "./api/api-urls.mjs";
+
 const userName = localStorage.getItem("userName");
 const userURLToLoad = `${userProfileURL}${userName}${extraProfileURL}`;
 
