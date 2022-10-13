@@ -17,7 +17,7 @@ export async function getUserPosts(url) {
         const response = await fetch(url, fetchingOptions);
         const userProfile = await response.json();
         const userPosts = userProfile.posts;
-        console.log(response);
+        //console.log(response);
         //console.log(userProfile.posts);
         
         // Creating a variable containing the posts array from the API call
