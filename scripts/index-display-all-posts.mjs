@@ -15,7 +15,11 @@ export function displayAllPosts(posts) {
 
 
         // Formatting the dates
-        const formattedDate = new Date(posts[i].created).toGMTString();
+        //const formattedDate = new Date(posts[i].created).toGMTString();
+        const formattedDate = new Date(posts[i].created).toLocaleDateString('en-us', {month:"short", day:"numeric"});
+        const formattedTime = new Date(posts[i].created).toLocaleTimeString('en-GB');
+
+        
 
         // Populating the HTML container
         postsContainer.innerHTML += `
@@ -29,7 +33,7 @@ export function displayAllPosts(posts) {
                 <div class="card-footer">
                 <img src="${posts[i].author.avatar}" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
                 <small class="text-muted"><strong>${posts[i].author.name}</strong>&emsp;</small>
-                    <small class="text-muted">${formattedDate}</small>
+                    <small class="text-muted" style="font-size: .8em">${formattedDate}, ${formattedTime}</small>
                 </div>
                 <div class="card-footer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">

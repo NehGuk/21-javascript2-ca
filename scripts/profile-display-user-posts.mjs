@@ -12,7 +12,8 @@ export function displayUserPosts(userPosts) {
         };
 
         // Formatting the dates
-        const formattedDate = new Date(userPosts[i].created).toLocaleString();
+        const formattedDate = new Date(userPosts[i].created).toLocaleDateString('en-us', {month:"short", day:"numeric"});
+        const formattedTime = new Date(userPosts[i].created).toLocaleTimeString('en-GB');
 
         // Populate myPostsContainer
         myPostsContainer.innerHTML += `
@@ -27,7 +28,7 @@ export function displayUserPosts(userPosts) {
         <div class="card-footer">
             <img src="/assets/image-sample.jpg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
             <small class="text-muted"><strong>${userPosts[i].owner}</strong>&emsp;</small>
-            <small class="text-muted">${formattedDate}</small>
+            <small class="text-muted" style="font-size: .8em">${formattedDate}, ${formattedTime}</small>
         </div>
         
         </div>
