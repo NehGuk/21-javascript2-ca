@@ -6,10 +6,19 @@ export async function sendAvatar(url, avatarMediaObject) {
 
     const token = localStorage.getItem("accessToken");
     
+    const putMethod = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+            
+        },
+        body: JSON.stringify(avatarMediaObject),
+    };
 
-    //const response = await fetch(url, putMethod);
-    //const json = await response.json();
+    const response = await fetch(url, putMethod);
+    const json = await response.json();
+    console.log(response);
+    console.log(json);
 
-
-
-}
+};

@@ -76,12 +76,9 @@ export async function displayUserProfile(userProfile) {
         const myFormData = new FormData(event.target);
         const avatarMediaObject = Object.fromEntries(myFormData.entries());
         console.log(avatarMediaObject);
-        
         sendAvatar(avatarURLToSend, avatarMediaObject);
-
-        //location.href = "/profile.html"
-    }
-
-}
+        location.href = "/profile.html"
+    };
+};
 
 
