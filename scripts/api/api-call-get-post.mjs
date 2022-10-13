@@ -31,7 +31,6 @@ export async function getPost(url) {
         };
         const response = await fetch(postURL, fetchingOptions);
         const post = await response.json();
-        console.log("Rooocking!");
 
         function displayPost() {
             const postContainer = document.querySelector(".container");
@@ -43,7 +42,9 @@ export async function getPost(url) {
             };
 
             // Formatting the dates
-            const formattedDate = new Date(post.created).toGMTString();
+            //const formattedDate = new Date(post.created).toGMTString();
+            const formattedDate = new Date(post.created).toLocaleDateString('en-us', {month:"short", day:"numeric"});
+        const formattedTime = new Date(post.created).toLocaleTimeString('en-GB');
 
             postContainer.innerHTML = "";
             postContainer.innerHTML = `
@@ -58,7 +59,7 @@ export async function getPost(url) {
                     <div class="card-footer">
                         <img src="${post.author.avatar}" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
                         <small class="text-muted"><strong>${post.author.name}</strong>&emsp;</small>
-                        <small class="text-muted">${formattedDate}</small>
+                        <small class="text-muted" style="font-size: 0.8em">${formattedDate}, ${formattedTime}</small>
                     </div>
                     <div class="card-footer">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
