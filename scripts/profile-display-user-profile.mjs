@@ -71,13 +71,12 @@ export async function displayUserProfile(userProfile) {
     form.addEventListener("submit", addAndSendAvatar);
     function addAndSendAvatar(event) {
         event.preventDefault();
-        //const avatarMedia = imageInput.value;
-        //localStorage.setItem("avatarMedia", avatarMedia);
+        // const avatarMediatoLocalStorage = imageInput.value;
+        // localStorage.setItem("avatar", avatarMediatoLocalStorage);
         const myFormData = new FormData(event.target);
         const avatarMediaObject = Object.fromEntries(myFormData.entries());
         console.log(avatarMediaObject);
         sendAvatar(avatarURLToSend, avatarMediaObject);
-        location.href = "/profile.html"
     };
 };
 
