@@ -71,8 +71,8 @@ export async function displayUserProfile(userProfile) {
     form.addEventListener("submit", addAndSendAvatar);
     function addAndSendAvatar(event) {
         event.preventDefault();
-        // const avatarMediatoLocalStorage = imageInput.value;
-        // localStorage.setItem("avatar", avatarMediatoLocalStorage);
+        const updatedAvatar = imageInput.value;
+        localStorage.setItem("avatar", updatedAvatar);
         const myFormData = new FormData(event.target);
         const avatarMediaObject = Object.fromEntries(myFormData.entries());
         console.log(avatarMediaObject);
