@@ -1,4 +1,4 @@
-// add date format
+
 import { displayUserPosts } from "../profile-display-user-posts.mjs";
 export async function getUserPosts(url) {
     try {
