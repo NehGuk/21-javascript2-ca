@@ -17,7 +17,7 @@ export function displayPost() {
     <div class="row row-cols-1 row-cols-md-1 g-4 posts-container">
         <div class="col">
         <div class="card h-100">
-            <img src="${post.media}" class="card-img-top" alt="...">
+            <img src="${post.media}" class="card-img-top" style="max-height: 30em; object-fit: cover" alt="...">
             <div class="card-body">
             <h1 class="card-title">${post.title}</h1>
             <p class="card-text">${post.body}</p>

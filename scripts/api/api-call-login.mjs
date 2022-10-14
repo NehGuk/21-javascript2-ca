@@ -22,6 +22,10 @@ export async function loginUser(url, userData) {
         const token = json.accessToken;
         localStorage.setItem("accessToken", token);
 
+        // getting and storing avatar
+        const avatar = json.avatar;
+        localStorage.setItem("avatar", avatar);
+
         // Display login error message, if necessary
         const loginErrorMessage = document.querySelector("#login-error-message");
         

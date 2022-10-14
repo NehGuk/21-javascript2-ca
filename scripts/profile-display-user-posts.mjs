@@ -1,7 +1,7 @@
 export function displayUserPosts(userPosts) {
+    const avatar = localStorage.getItem("avatar");
 
     const myPostsContainer = document.querySelector("#my-posts-container");
-    
     myPostsContainer.innerHTML = "";    
     
     for (let i = 0; i < userPosts.length; i++) {
@@ -26,7 +26,7 @@ export function displayUserPosts(userPosts) {
             <p class="card-text">${userPosts[i].body.slice(0, 400)}<a href="/post.html?id=${userPosts[i].id}" style="text-decoration: none">...</a></p>
         </div>
         <div class="card-footer">
-            <img src="/assets/image-sample.jpg" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+            <img src="${avatar}" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
             <small class="text-muted"><strong>${userPosts[i].owner}</strong>&emsp;</small>
             <small class="text-muted" style="font-size: .8em">${formattedDate}, ${formattedTime}</small>
         </div>
