@@ -1,9 +1,9 @@
 // ----------- GET AND DISPLAY POSTS IN FEED
 // API URLs
-import { API_BASE_URL } from "../api/api-urls.mjs";
+//import { API_BASE_URL } from "../api/api-urls.mjs";
 import { allPostsURL } from "../api/api-urls.mjs";
-import { allPostsURLAsc } from "../api/api-urls.mjs";
-import { allPostsURLDesc } from "../api/api-urls.mjs";
+//import { allPostsURLAsc } from "../api/api-urls.mjs";
+//import { allPostsURLDesc } from "../api/api-urls.mjs";
 
 // console.log(allPostsURL);
 

@@ -1,17 +1,12 @@
-export async function sendNewPost(url, newPost) {
-    try {
-        const token = localStorage.getItem("accessToken");
-        const postData = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`,
-                
-            },
-            body: JSON.stringify(newPost),
-        };
+import { authFetchOptionsArray } from "../api/api-fetch-methods.mjs";
 
-        const response = await fetch(url, postData);
+export async function sendNewPost(url, newPost) {
+    try {        
+        const [authGet, authPost] = authFetchOptionsArray;
+        authPost["body"] = JSON.stringify(newPost),
+        console.log(authPost);
+
+        const response = await fetch(url, authPost);
         const myPost = await response.json();
 
         // Refreshing the page
@@ -21,4 +16,3 @@ export async function sendNewPost(url, newPost) {
         console.log(error);
     }
 };
-

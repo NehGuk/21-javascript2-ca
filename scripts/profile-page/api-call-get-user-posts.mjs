@@ -1,20 +1,11 @@
 
 import { displayUserPosts } from "../profile-page/profile-display-user-posts.mjs";
+import { authFetchOptionsArray } from "../api/api-fetch-methods.mjs";
 export async function getUserPosts(url) {
     try {
+        const [getPosts] = authFetchOptionsArray;
 
-        const token = localStorage.getItem("accessToken");
-        const userName = localStorage.getItem("userName");
-
-        const fetchingOptions = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`,
-            }
-        };
-
-        const response = await fetch(url, fetchingOptions);
+        const response = await fetch(url, getPosts);
         const userProfile = await response.json();
         const userPosts = userProfile.posts;
         //console.log(response);
