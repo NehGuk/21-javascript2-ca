@@ -17,13 +17,13 @@ export function displayPost() {
     <div class="row row-cols-1 row-cols-md-1 g-4 posts-container">
         <div class="col">
         <div class="card h-100">
-            <img src="${post.media}" class="card-img-top" style="max-height: 30em; object-fit: cover" alt="...">
+            <img src="${post.media}" class="card-img-top" style="max-height: 30em; object-fit: cover" alt="Image cover: ${post.title}">
             <div class="card-body">
             <h1 class="card-title">${post.title}</h1>
             <p class="card-text">${post.body}</p>
             </div>
             <div class="card-footer">
-                <img src="${post.author.avatar}" alt="Bootstrap" width="32" height="32" class="rounded-circle border border-white">
+                <img src="${post.author.avatar}" width="32" height="32" class="rounded-circle border border-white" alt="${post.author.name} avatar">
                 <small class="text-muted"><strong>${post.author.name}</strong>&emsp;</small>
                 <small class="text-muted" style="font-size: 0.8em">${formattedDate}, ${formattedTime}</small>
             </div>
