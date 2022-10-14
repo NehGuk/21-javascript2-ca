@@ -25,6 +25,10 @@ export async function loginUser(url, userData) {
         // getting and storing avatar
         const avatar = json.avatar;
         localStorage.setItem("avatar", avatar);
+        if (avatar.length === 0) {
+            const noAvatar = "/assets/image-sample.jpg";
+            localStorage.setItem("avatar", noAvatar);
+        }
 
         // Display login error message, if necessary
         const loginErrorMessage = document.querySelector("#login-error-message");
