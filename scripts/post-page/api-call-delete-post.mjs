@@ -1,17 +1,12 @@
+import { authFetchOptionsArray } from "../api/api-fetch-methods.mjs";
 export async function deleteEntry(url) {
     try {
-        const token = localStorage.getItem("accessToken");
-        const deleteData = {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`,
-            },
-        }
-        const response = await fetch(url, deleteData);
+        const [authGet, authPost, authPut, authDelete] = authFetchOptionsArray;
+
+        const response = await fetch(url, authDelete);
         const json = await response.json();
         // Directing user to another page after deletion
-        location.href = "/index.html";
+        location.href = "/profile.html";
 
     } catch(error) {
         console.log(error);

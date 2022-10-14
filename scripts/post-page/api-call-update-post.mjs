@@ -4,27 +4,20 @@ import { getPost, postURL } from "./api-call-get-post.mjs";
 import { URLToBeUpdated } from "./post-update.mjs";
 import { postContainer } from "./post-update.mjs";
 
+import { authFetchOptionsArray } from "../api/api-fetch-methods.mjs";
+const [authGet, authPost, authPut] = authFetchOptionsArray;
+
 import { buttonContainer } from "./post-update.mjs";
 import { postID } from "./post-update.mjs";
 export async function updateEntry(url) {
     try {
-        
         // Get data from current post
         function fetchCurrentPost() {
             console.log("Getting post data");
             getPost(URLToBeUpdated);
         }
-        
-        const token = localStorage.getItem("accessToken");
-        const fetchingOptions = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                Authorization: `Bearer ${token}`,
-            }
-        };
-
-        const response = await fetch(URLToBeUpdated, fetchingOptions);
+    
+        const response = await fetch(URLToBeUpdated, authGet);
         const post = await response.json();
         console.log("Rooockingggg222!");
         console.log(response);
@@ -78,21 +71,14 @@ export async function updateEntry(url) {
 
             // API call to update post
             async function sendEditedEntry(url, updatedContent) {
-                console.log(url);
-                console.log(updatedPostContent);
+                //console.log(url);
+                //console.log(updatedPostContent);
 
-                const putData = {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${token}`,
-                        
-                    },
-                    body: JSON.stringify(updatedContent),
-                };
-
-                const response2 = await fetch(url, putData);
-                const editedPost = (await response2).json();
+                authPut["body"] = JSON.stringify(updatedContent),
+                console.log(authPut);
+                
+                const response2 = await fetch(url, authPut);
+                const editedPost = await response2.json();
 
                 // Reload updated post? How?
                 location.reload();

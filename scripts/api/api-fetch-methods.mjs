@@ -1,7 +1,7 @@
 const token = localStorage.getItem("accessToken");
 
 export const authFetchOptionsArray = [
-    // get all posts, get user posts, get user profile
+    // get all posts, get user posts, get user post, get user profile
     {
         method: 'GET',
         headers: {
@@ -20,7 +20,7 @@ export const authFetchOptionsArray = [
         body: "",
     },
 
-    // send avatar
+    // send avatar, update post
     {
         method: 'PUT',
         headers: {
@@ -28,6 +28,15 @@ export const authFetchOptionsArray = [
             Authorization: `Bearer ${token}`,
         },
         body: "",
+    },
+
+    // delete post
+    {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+        },
     },
 
 ];
