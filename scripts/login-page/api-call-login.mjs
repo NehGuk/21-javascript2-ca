@@ -1,13 +1,11 @@
+import { authFetchOptionsArray } from "../api/api-fetch-methods.mjs";
 export async function loginUser(url, userData) {
     try {
-        const postData = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(userData),
-        }
-        const response = await fetch(url, postData);    
+        const [authGet, authPost, authPut, authDelete, authLogin] = authFetchOptionsArray;
+        authLogin["body"] = JSON.stringify(userData);
+        //console.log(userData);
+
+        const response = await fetch(url, authLogin);    
         const json = await response.json();
         
         // getting and storing the access token

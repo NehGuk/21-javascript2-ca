@@ -10,7 +10,7 @@ export const authFetchOptionsArray = [
         }
     },
 
-    // create new entry
+    // create new entry, register user
     {
         method: 'POST',
         headers: {
@@ -37,6 +37,15 @@ export const authFetchOptionsArray = [
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
         },
+    },
+
+    // login
+    {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: "",
     },
 
 ];
