@@ -1,13 +1,18 @@
+import { authFetchOptionsArray } from "../api/api-fetch-methods.mjs";
 export async function registerUser(url, userData) {
     try {
-        const postData = {
+        /* const postData = {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(userData),
-        };
-        const response = await fetch(url, postData);
+        }; */
+
+        const [authGet, authPost] = authFetchOptionsArray;
+        authPost["body"] = JSON.stringify(userData);
+
+        const response = await fetch(url, authPost);
         const json = await response.json();
         console.log(json);
 

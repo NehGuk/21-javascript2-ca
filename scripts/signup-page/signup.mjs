@@ -1,11 +1,11 @@
 localStorage.clear();
 
 // API URLs
-import { API_BASE_URL } from "./api/api-urls.mjs";
-import { registerURL } from "./api/api-urls.mjs";
+import { API_BASE_URL } from "../api/api-urls.mjs";
+import { registerURL } from "../api/api-urls.mjs";
 
 // Function to register user
-import { registerUser } from "./api/api-call-register.mjs";
+import { registerUser } from "./api-call-register.mjs";
 
 // Form variables
 const form = document.querySelector("#signupform");

@@ -4,7 +4,7 @@ const urlParams = new URLSearchParams(queryString);
 export const postID = urlParams.get("id");
 
 // API URLs
-import { updateEntryURL } from "./api/api-urls.mjs";
+import { updateEntryURL } from "../api/api-urls.mjs";
 
 // URL to update
 export const URLToBeUpdated = `${updateEntryURL}${postID}`;
@@ -12,7 +12,7 @@ console.log(URLToBeUpdated);
 
 
 // Function to update post
-import { updateEntry } from "./api/api-call-update-post.mjs";
+import { updateEntry } from "./api-call-update-post.mjs";
 
 // Update container variables
 export const postContainer = document.querySelector("#main-post-container");
