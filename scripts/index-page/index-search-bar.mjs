@@ -3,7 +3,7 @@
 // console.log(window.posts[0].author.name);
 
 // Importing display posts function
-import { displayAllPosts } from "./index-display-all-posts.mjs";
+import { displayAllPosts } from "../index-page/index-display-all-posts.mjs";
 
 // Variables
 const searchInput = document.querySelector("#search-input");

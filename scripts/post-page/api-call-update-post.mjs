@@ -1,11 +1,11 @@
 
 import { getPost, postURL } from "./api-call-get-post.mjs";
 
-import { URLToBeUpdated } from "../post-update.mjs";
+import { URLToBeUpdated } from "./post-update.mjs";
+import { postContainer } from "./post-update.mjs";
 
-import { postContainer } from "../post-update.mjs";
-import { buttonContainer } from "../post-update.mjs";
-import { postID } from "../post-update.mjs";
+import { buttonContainer } from "./post-update.mjs";
+import { postID } from "./post-update.mjs";
 export async function updateEntry(url) {
     try {
         

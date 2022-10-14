@@ -1,11 +1,12 @@
 const userName = localStorage.getItem("userName");
 
 // Creating API URL to send avatar
-import { userAvatarURL } from "./api/api-urls.mjs";
+import { userAvatarURL } from "../api/api-urls.mjs";
 const avatarURLToSend = `${userAvatarURL}${userName}/media`;
 
 // Function to sent avatar
-import { sendAvatar } from "./api/api-call-send-avatar.mjs";
+
+import { sendAvatar } from "../profile-page/api-call-send-avatar.mjs";
 
 
 export async function displayUserProfile(userProfile) {

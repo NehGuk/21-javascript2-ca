@@ -1,10 +1,10 @@
 localStorage.clear();
 
 // API URLs
-import { loginURL } from "./api/api-urls.mjs";
+import { loginURL } from "../api/api-urls.mjs";
 
 // Function to login user
-import { loginUser } from "./api/api-call-login.mjs";
+import { loginUser } from "../login-page/api-call-login.mjs";
 
 // Form variables
 const form = document.querySelector("#loginform");

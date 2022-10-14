@@ -1,4 +1,4 @@
-import { displayAllPosts } from "../index-display-all-posts.mjs";
+import { displayAllPosts } from "./index-display-all-posts.mjs";
 export async function getPosts(url) {
     try {
         const token = localStorage.getItem("accessToken");
@@ -16,7 +16,6 @@ export async function getPosts(url) {
         
         // Creating a variable containing the posts array from the API call
         window.posts = posts;
-        
         
         displayAllPosts(posts);
 

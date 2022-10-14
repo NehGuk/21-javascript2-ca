@@ -1,5 +1,6 @@
-import { displayUserProfile } from "../profile-display-user-profile.mjs";
-export async function getUserProfile(url) {
+
+import { displayUserPosts } from "../profile-page/profile-display-user-posts.mjs";
+export async function getUserPosts(url) {
     try {
 
         const token = localStorage.getItem("accessToken");
@@ -15,10 +16,14 @@ export async function getUserProfile(url) {
 
         const response = await fetch(url, fetchingOptions);
         const userProfile = await response.json();
+        const userPosts = userProfile.posts;
         //console.log(response);
-        //console.log(userProfile);
+        //console.log(userProfile.posts);
         
-        displayUserProfile(userProfile);
+        // Creating a variable containing the posts array from the API call
+        window.userPosts = userPosts;
+
+        displayUserPosts(userPosts);
     } catch(error) {
         console.log(error);
     }

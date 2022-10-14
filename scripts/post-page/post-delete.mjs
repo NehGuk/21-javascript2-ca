@@ -4,11 +4,11 @@ const urlParams = new URLSearchParams(queryString);
 const postID = urlParams.get("id");
 
 // API URL
-import { deleteEntryURL } from "./api/api-urls.mjs";
+import { deleteEntryURL } from "../api/api-urls.mjs";
 const urlToBeDeleted = `${deleteEntryURL}${postID}`;
 
 // Function to delete post
-import { deleteEntry } from "./api/api-call-delete-post.mjs";
+import { deleteEntry } from "./api-call-delete-post.mjs";
 
 // Delete container variables
 const buttonContainer = document.querySelector("#button-container");

@@ -1,9 +1,9 @@
 // Get singlePost base URL
-import { singlePostURL } from "./api-urls.mjs";
-import { extra } from "./api-urls.mjs";
+import { singlePostURL } from "../api/api-urls.mjs";
+import { extra } from "../api/api-urls.mjs";
 
 // Function do display post
-import { displayPost } from "../post-display-post.mjs";
+import { displayPost } from "./post-display-post.mjs";
 
 // Get the post ID from the URL query string
 const queryString = window.location.search;

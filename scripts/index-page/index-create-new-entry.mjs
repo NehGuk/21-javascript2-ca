@@ -1,13 +1,13 @@
 
 // API URLs
-import { newEntryURL } from "./api/api-urls.mjs";
+import { newEntryURL } from "../api/api-urls.mjs";
 
 // API call
-import { sendNewPost } from "./api/api-call-create-new-entry.mjs";
+import { sendNewPost } from "./api-call-create-new-entry.mjs";
 
 // Variables and function to refresh the feed after post is new post is submitted
-import { getPosts } from "./api/api-call-get-posts.mjs";
-import { allPostsURL } from "./api/api-urls.mjs";
+import { getPosts } from "./api-call-get-posts.mjs";
+import { allPostsURL } from "../api/api-urls.mjs";
 
 // Form variables
 const form = document.querySelector("#add-post-form");
