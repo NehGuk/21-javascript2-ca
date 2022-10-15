@@ -6,7 +6,7 @@
 
 ![image](./assets/home-screenshot.png)
 
-You have been tasked with producing a new JavaScript front-end client for an existing social media platform.
+This was my Javascript 2 Course Assignment: the task was to produce a new JavaScript front-end client for an existing social media platform.
 
 ## Goal
 
