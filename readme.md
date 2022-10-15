@@ -17,6 +17,11 @@ To apply knowledge of JavaScript techniques to implement the front-end functiona
 - Create a functioning user interface that allows for viewing, posting, editing and deleting social media content.
 - Social API routes require authorisation via JWT (JSON Web Tokens). You will need to register an account and login to access your token.
 
+## Restrictions
+
+- Required functionality must be implemented in original, pure JavaScript.
+- A CSS Framework may be used to build the application UI.
+
 ## Built with
 
 - HTML
