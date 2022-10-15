@@ -7,8 +7,6 @@ export function displayPost() {
         post.author.avatar = "/assets/image-sample.jpg";
     };
 
-    // Formatting the dates
-    //const formattedDate = new Date(post.created).toGMTString();
     const formattedDate = new Date(post.created).toLocaleDateString('en-us', {month:"short", day:"numeric"});
     const formattedTime = new Date(post.created).toLocaleTimeString('en-GB');
 

@@ -1,30 +1,21 @@
-
 import { getPost, postURL } from "./api-call-get-post.mjs";
-
 import { URLToBeUpdated } from "./post-update.mjs";
 import { postContainer } from "./post-update.mjs";
-
 import { authFetchOptionsArray } from "../api/api-fetch-methods.mjs";
 const [authGet, authPost, authPut] = authFetchOptionsArray;
 
-import { buttonContainer } from "./post-update.mjs";
-import { postID } from "./post-update.mjs";
 export async function updateEntry(url) {
     try {
-        // Get data from current post
         function fetchCurrentPost() {
-            console.log("Getting post data");
             getPost(URLToBeUpdated);
         }
     
         const response = await fetch(URLToBeUpdated, authGet);
         const post = await response.json();
-        console.log("Rooockingggg222!");
         console.log(response);
         console.log(post);
         console.log(post.title);
 
-        // Create form and populate it with post info
         postContainer.innerHTML = `
         <div class="container px-4 py-5 col-lg-5 col-sm-12">
         <h1 class="text-center pb-3">Edit post</h1>
@@ -56,33 +47,21 @@ export async function updateEntry(url) {
         </div>
         `;
 
-        // Add event listener to the update button
-        const updateForm = document.querySelector("#update-post-form");
-        
+        const updateForm = document.querySelector("#update-post-form");        
         updateForm.addEventListener("submit", updatePostInfo);
-        
         function updatePostInfo(event) {
             event.preventDefault();
 
-            // Create new object from form inputs
             const myFormData = new FormData(event.target);
             const updatedPostContent = Object.fromEntries(myFormData.entries());
             console.log(updatedPostContent);
 
-            // API call to update post
             async function sendEditedEntry(url, updatedContent) {
-                //console.log(url);
-                //console.log(updatedPostContent);
-
                 authPut["body"] = JSON.stringify(updatedContent),
                 console.log(authPut);
-                
                 const response2 = await fetch(url, authPut);
                 const editedPost = await response2.json();
-
-                // Reload updated post? How?
                 location.reload();
-
             }
             sendEditedEntry(URLToBeUpdated, updatedPostContent);
         }    
