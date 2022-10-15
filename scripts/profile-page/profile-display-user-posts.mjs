@@ -1,23 +1,18 @@
 export function displayUserPosts(userPosts) {
     const avatar = localStorage.getItem("avatar");
-
     const myPostsContainer = document.querySelector("#my-posts-container");
     myPostsContainer.innerHTML = "";    
     
     for (let i = 0; i < userPosts.length; i++) {
     
-        // if statement here for default image?
         if (!userPosts[i].media) {
             userPosts[i].media = "/assets/image-sample.jpg";
         };
 
-        // Formatting the dates
         const formattedDate = new Date(userPosts[i].created).toLocaleDateString('en-us', {month:"short", day:"numeric"});
         const formattedTime = new Date(userPosts[i].created).toLocaleTimeString('en-GB');
 
-        // Populate myPostsContainer
-        myPostsContainer.innerHTML += `
-        
+        myPostsContainer.innerHTML += `        
         <div class="col">
         <div class="card h-100">
         <a href="/post.html?id=${userPosts[i].id}"><img src="${userPosts[i].media}" class="card-img-top" alt="Image cover: ${userPosts[i].title}" style="width: 100%; height: 15rem; object-fit: cover"></a>
@@ -33,8 +28,6 @@ export function displayUserPosts(userPosts) {
         
         </div>
         </div>
-        `;
-            
+        `;           
     }
-    
 }

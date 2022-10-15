@@ -1,14 +1,8 @@
-// Using ``window.userPosts`` to get the array from the current API call
-
-// Importing display posts function
 import { displayUserPosts } from "./profile-display-user-posts.mjs";
 
-// Variables
 const searchInput = document.querySelector("#search-input");
 const clearButton = document.querySelector("#clear-button");
 const errorMessageContainer = document.querySelector("#error-message-container");
-
-
 
 searchInput.addEventListener("input", (event) => {
     let value = event.target.value;
@@ -31,7 +25,6 @@ searchInput.addEventListener("input", (event) => {
     displayUserPosts(filteredArray);
 });
 
-// Clear button
 clearButton.addEventListener("click", clearSearchField);    
 function clearSearchField() {
     searchInput.value = "";
