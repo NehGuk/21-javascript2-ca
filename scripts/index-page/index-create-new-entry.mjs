@@ -15,7 +15,17 @@ const form = document.querySelector("#add-post-form");
 // Form event listener
 form.addEventListener("submit", createAndSendPost);
 
-
+/**
+ * Creates a post object and sends it to API
+ * @param {MyEvent} event The observable event
+ * @listens MyEvent
+ * @example
+ * ```js
+ * // Object called postContent is created from form input fields
+ * // The function sendNewPost is called to send the object to the specific API URL
+ * sendNewPost(newEntryURL, postContent);
+ * ```
+ */
 function createAndSendPost(event) {
     event.preventDefault();
     
@@ -39,4 +49,3 @@ function createAndSendPost(event) {
     // Call the getPosts function again?
     // Or use location.href = form.action;?
 };
-
