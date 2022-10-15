@@ -1,6 +1,15 @@
 import { newEntryURL } from "../api/api-urls.mjs";
 import { sendNewPost } from "./api-call-create-new-entry.mjs";
 
+const newPostFormContainer = document.querySelector("#new-post-form-container");
+newPostFormContainer.style.display = "none";
+const newPostButton = document.querySelector("#cta-container");
+newPostButton.addEventListener("click", showPostForm);
+function showPostForm() {
+    newPostFormContainer.style.display = "block";
+    newPostButton.style.display = "none";
+}
+
 const form = document.querySelector("#add-post-form");
 form.addEventListener("submit", createAndSendPost);
 

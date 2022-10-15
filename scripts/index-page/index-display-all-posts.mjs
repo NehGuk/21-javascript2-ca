@@ -46,7 +46,7 @@ export function displayAllPosts(posts) {
                 <p class="card-text">${posts[i].body.slice(0, 400)}<a href="#" style="text-decoration: none"></a></p>
                 </div>
                 <div class="card-footer">
-                <img src="${posts[i].author.avatar}" width="32" height="32" class="rounded-circle border border-white" alt="${posts[i].author.name} avatar">
+                <img src="${posts[i].author.avatar}" width="32" height="32" class="rounded-circle border border-primary" style="width: 32; height: 32; object-fit: cover; border-width: 1px !important; alt="${posts[i].author.name} avatar">
                 <small class="text-muted"><strong>${posts[i].author.name}</strong>&emsp;</small>
                     <small class="text-muted" style="font-size: .8em">${formattedDate}, ${formattedTime}</small>
                 </div>
