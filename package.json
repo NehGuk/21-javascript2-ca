@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/NehGuk/21-javascript2-ca#readme",
   "devDependencies": {
+    "jsdocs": "^1.0.0",
     "live-server": "^1.2.2",
     "sass": "^1.55.0"
   },

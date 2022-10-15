@@ -1,3 +1,27 @@
+/**
+ * Creates HTML for list of posts from API
+ * @param {Array} posts Displays array of all posts from API
+ * @example
+ * ```js
+ * // Loops through the posts array
+ * for (let i = 0; i < posts.length; i++)
+ * 
+ * // Formats date and time of post entries
+ * const formattedDate = new Date(posts[i].created).toLocaleDateString('en-us', {month:"short", day:"numeric"});
+ * const formattedTime = new Date(posts[i].created).toLocaleTimeString('en-GB');
+ * 
+ * // Populates HTML container
+ * postsContainer.innerHTML += `
+ * <div class="col">
+ *      <div class="card h-100">
+ *          <a href="/post.html?id=${posts[i].id}"><img src="${posts[i].media}" class="card-img-top" style="width: 100%; height: 15rem; object-fit: cover;" alt="Image cover: ${posts[i].title}"></a>
+ *      </div>
+ * </div>
+ * `:
+ * 
+ * 
+ * ```
+ */
 export function displayAllPosts(posts) {
             
     const postsContainer = document.querySelector(".posts-container");
