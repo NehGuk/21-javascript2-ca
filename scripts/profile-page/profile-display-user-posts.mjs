@@ -21,7 +21,7 @@ export function displayUserPosts(userPosts) {
             <p class="card-text">${userPosts[i].body.slice(0, 400)}<a href="/post.html?id=${userPosts[i].id}" style="text-decoration: none">...</a></p>
         </div>
         <div class="card-footer">
-            <img src="${avatar}" width="32" height="32" class="rounded-circle border border-white" alt="${userPosts[i].owner} avatar">
+            <img src="${avatar}" width="32" height="32" class="rounded-circle border border-primary" style="width: 32; height: 32; object-fit: cover; border-width: 1px !important;" alt="${userPosts[i].owner} avatar">
             <small class="text-muted"><strong>${userPosts[i].owner}</strong>&emsp;</small>
             <small class="text-muted" style="font-size: .8em">${formattedDate}, ${formattedTime}</small>
         </div>

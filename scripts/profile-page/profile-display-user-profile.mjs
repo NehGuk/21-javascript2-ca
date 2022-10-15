@@ -14,7 +14,7 @@ export async function displayUserProfile(userProfile) {
         <h1 class="text-center">My profile</h1>
         <!-- profile avatar -->
         <div class="text-center">
-        <img src="${userProfile.avatar}" class="rounded-circle border border-white" style="width: 200px; height: 200px; object-fit: cover;" alt="${userProfile.name} avatar">
+        <img src="${userProfile.avatar}" class="rounded-circle border border-primary" style="width: 200px; height: 200px; object-fit: cover; border-width: 4px !important;" alt="${userProfile.name} avatar">
         </div>
         
         <!-- change avatar form -->
