@@ -1,6 +1,6 @@
 const token = localStorage.getItem("accessToken");
 export const authFetchOptionsArray = [
-  // get all posts, get user posts, get user post, get user profile
+  // get all posts, get user posts, get user post, get user profile, get all users
   {
     method: "GET",
     headers: {

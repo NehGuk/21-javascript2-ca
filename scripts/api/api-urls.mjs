@@ -32,3 +32,6 @@ export const deleteEntryURL = `${API_BASE_URL}/api/v1/social/posts/`; //<id>
 
 // Update entry
 export const updateEntryURL = `${API_BASE_URL}/api/v1/social/posts/`; //<id>
+
+// Profiles: get all entries
+export const allUsersURL = `${API_BASE_URL}/api/v1/social/profiles`;
