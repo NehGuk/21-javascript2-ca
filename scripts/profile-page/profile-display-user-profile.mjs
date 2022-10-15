@@ -4,13 +4,13 @@ const avatarURLToSend = `${userAvatarURL}${userName}/media`;
 import { sendAvatar } from "../profile-page/api-call-send-avatar.mjs";
 
 export async function displayUserProfile(userProfile) {
-    if (!userProfile.avatar) {
-        userProfile.avatar = "/assets/image-sample.jpg";
-    }
+  if (!userProfile.avatar) {
+    userProfile.avatar = "/assets/image-sample.jpg";
+  }
 
-    const profileContainer = document.querySelector("#profile-main-container");
-    profileContainer.innerHTML = "";
-    profileContainer.innerHTML = `
+  const profileContainer = document.querySelector("#profile-main-container");
+  profileContainer.innerHTML = "";
+  profileContainer.innerHTML = `
         <h1 class="text-center">My profile</h1>
         <!-- profile avatar -->
         <div class="text-center">
@@ -43,30 +43,30 @@ export async function displayUserProfile(userProfile) {
         <hr>  
     `;
 
-    // Hiding by default: image input and send-avatar button
-    const form = document.querySelector("#form-change-avatar");
-    const imageInput = document.querySelector("#avatar-media");
-    const changeAvatarButton = document.querySelector("#change-avatar-button");
-    const sendAvatarButton = document.querySelector("#send-avatar-button");
-    
-    imageInput.style.display = "none";
-    sendAvatarButton.style.display = "none";
+  // Hiding by default: image input and send-avatar button
+  const form = document.querySelector("#form-change-avatar");
+  const imageInput = document.querySelector("#avatar-media");
+  const changeAvatarButton = document.querySelector("#change-avatar-button");
+  const sendAvatarButton = document.querySelector("#send-avatar-button");
 
-    changeAvatarButton.addEventListener("click", displayInputAndSendButton);
-    function displayInputAndSendButton() {
-        imageInput.style.display = "block";
-        sendAvatarButton.style.display = "inline-block";
-        changeAvatarButton.style.display = "none";
-    };
+  imageInput.style.display = "none";
+  sendAvatarButton.style.display = "none";
 
-    form.addEventListener("submit", addAndSendAvatar);
-    function addAndSendAvatar(event) {
-        event.preventDefault();
-        const updatedAvatar = imageInput.value;
-        localStorage.setItem("avatar", updatedAvatar);
-        const myFormData = new FormData(event.target);
-        const avatarMediaObject = Object.fromEntries(myFormData.entries());
-        console.log(avatarMediaObject);
-        sendAvatar(avatarURLToSend, avatarMediaObject);
-    };
-};
+  changeAvatarButton.addEventListener("click", displayInputAndSendButton);
+  function displayInputAndSendButton() {
+    imageInput.style.display = "block";
+    sendAvatarButton.style.display = "inline-block";
+    changeAvatarButton.style.display = "none";
+  }
+
+  form.addEventListener("submit", addAndSendAvatar);
+  function addAndSendAvatar(event) {
+    event.preventDefault();
+    const updatedAvatar = imageInput.value;
+    localStorage.setItem("avatar", updatedAvatar);
+    const myFormData = new FormData(event.target);
+    const avatarMediaObject = Object.fromEntries(myFormData.entries());
+    console.log(avatarMediaObject);
+    sendAvatar(avatarURLToSend, avatarMediaObject);
+  }
+}

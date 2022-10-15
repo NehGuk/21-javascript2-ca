@@ -16,6 +16,6 @@ buttonContainer.style.display = "none";
 updateButton.addEventListener("click", showUpdateForm);
 
 async function showUpdateForm() {
-    buttonContainer.style.display = "none";
-    updateEntry(URLToBeUpdated);
+  buttonContainer.style.display = "none";
+  updateEntry(URLToBeUpdated);
 }

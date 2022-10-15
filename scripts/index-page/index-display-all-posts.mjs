@@ -5,11 +5,11 @@
  * ```js
  * // Loops through the posts array
  * for (let i = 0; i < posts.length; i++)
- * 
+ *
  * // Formats date and time of post entries
  * const formattedDate = new Date(posts[i].created).toLocaleDateString('en-us', {month:"short", day:"numeric"});
  * const formattedTime = new Date(posts[i].created).toLocaleTimeString('en-GB');
- * 
+ *
  * // Populates HTML container
  * postsContainer.innerHTML += `
  * <div class="col">
@@ -18,27 +18,32 @@
  *      </div>
  * </div>
  * `:
- * 
- * 
+ *
+ *
  * ```
  */
 export function displayAllPosts(posts) {
-    const postsContainer = document.querySelector(".posts-container");
-    postsContainer.innerHTML = "";
+  const postsContainer = document.querySelector(".posts-container");
+  postsContainer.innerHTML = "";
 
-    for (let i = 0; i < posts.length; i++) {
-        if (!posts[i].media) {
-            posts[i].media = "/assets/image-sample.jpg";
-        };
-        if (!posts[i].author.avatar) {
-            posts[i].author.avatar = "/assets/image-sample.jpg";
-        };
+  for (let i = 0; i < posts.length; i++) {
+    if (!posts[i].media) {
+      posts[i].media = "/assets/image-sample.jpg";
+    }
+    if (!posts[i].author.avatar) {
+      posts[i].author.avatar = "/assets/image-sample.jpg";
+    }
 
-        const formattedDate = new Date(posts[i].created).toLocaleDateString('en-us', {month:"short", day:"numeric"});
-        const formattedTime = new Date(posts[i].created).toLocaleTimeString('en-GB');
-        
-        postsContainer.innerHTML += `
-        <div class="col">
+    const formattedDate = new Date(posts[i].created).toLocaleDateString(
+      "en-us",
+      { month: "short", day: "numeric" }
+    );
+    const formattedTime = new Date(posts[i].created).toLocaleTimeString(
+      "en-GB"
+    );
+
+    postsContainer.innerHTML += `
+    <div class="col">
             <div class="card h-100">
                 <a href="/post.html?id=${posts[i].id}"><img src="${posts[i].media}" class="card-img-top" style="width: 100%; height: 15rem; object-fit: cover;" alt="Image cover: ${posts[i].title}"></a>
                 <div class="card-body">
@@ -64,5 +69,5 @@ export function displayAllPosts(posts) {
             </div>
         </div>
         `;
-    }
-};
+  }
+}

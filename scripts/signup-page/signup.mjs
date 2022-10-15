@@ -9,8 +9,8 @@ registerErrorMessage.style.display = "none";
 
 form.addEventListener("submit", createAndRegisterUser);
 function createAndRegisterUser(event) {
-    event.preventDefault();
-    const myFormData = new FormData(event.target);
-    const userProfile = Object.fromEntries(myFormData.entries());
-    registerUser(registerURL, userProfile);
+  event.preventDefault();
+  const myFormData = new FormData(event.target);
+  const userProfile = Object.fromEntries(myFormData.entries());
+  registerUser(registerURL, userProfile);
 }

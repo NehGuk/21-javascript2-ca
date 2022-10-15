@@ -6,8 +6,8 @@ newPostFormContainer.style.display = "none";
 const newPostButton = document.querySelector("#cta-container");
 newPostButton.addEventListener("click", showPostForm);
 function showPostForm() {
-    newPostFormContainer.style.display = "block";
-    newPostButton.style.display = "none";
+  newPostFormContainer.style.display = "block";
+  newPostButton.style.display = "none";
 }
 
 const form = document.querySelector("#add-post-form");
@@ -25,16 +25,16 @@ form.addEventListener("submit", createAndSendPost);
  * ```
  */
 function createAndSendPost(event) {
-    event.preventDefault();
-    
-    const myFormData = new FormData(event.target);
-    const postContent = Object.fromEntries(myFormData.entries());
-    
-    if (!postContent.media) {
-        postContent.media = "https://www.discover-the-world.com/app/uploads/2019/08/norway-senja-aurora-sky-istk.jpg";
-    }
+  event.preventDefault();
 
-    sendNewPost(newEntryURL, postContent);
-    event.target.reset();
+  const myFormData = new FormData(event.target);
+  const postContent = Object.fromEntries(myFormData.entries());
 
-};
+  if (!postContent.media) {
+    postContent.media =
+      "https://www.discover-the-world.com/app/uploads/2019/08/norway-senja-aurora-sky-istk.jpg";
+  }
+
+  sendNewPost(newEntryURL, postContent);
+  event.target.reset();
+}

@@ -13,5 +13,5 @@ buttonContainer.style.display = "none";
 
 deleteButton.addEventListener("click", clickAndDeletePost);
 function clickAndDeletePost() {
-    deleteEntry(urlToBeDeleted);
+  deleteEntry(urlToBeDeleted);
 }

@@ -1,17 +1,20 @@
 export function displayPost() {
-    const postContainer = document.querySelector(".container");
-    if (!post.media) {
-        post.media = "/assets/image-sample.jpg";
-    };
-    if (!post.author.avatar) {
-        post.author.avatar = "/assets/image-sample.jpg";
-    };
+  const postContainer = document.querySelector(".container");
+  if (!post.media) {
+    post.media = "/assets/image-sample.jpg";
+  }
+  if (!post.author.avatar) {
+    post.author.avatar = "/assets/image-sample.jpg";
+  }
 
-    const formattedDate = new Date(post.created).toLocaleDateString('en-us', {month:"short", day:"numeric"});
-    const formattedTime = new Date(post.created).toLocaleTimeString('en-GB');
+  const formattedDate = new Date(post.created).toLocaleDateString("en-us", {
+    month: "short",
+    day: "numeric",
+  });
+  const formattedTime = new Date(post.created).toLocaleTimeString("en-GB");
 
-    postContainer.innerHTML = "";
-    postContainer.innerHTML = `
+  postContainer.innerHTML = "";
+  postContainer.innerHTML = `
     <div class="row row-cols-1 row-cols-md-1 g-4 posts-container">
         <div class="col">
         <div class="card h-100">
@@ -40,5 +43,4 @@ export function displayPost() {
         </div>
     </div>
     `;
-    
-};
+}
