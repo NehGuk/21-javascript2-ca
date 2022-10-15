@@ -1,16 +1,9 @@
 const userName = localStorage.getItem("userName");
-
-// Creating API URL to send avatar
 import { userAvatarURL } from "../api/api-urls.mjs";
 const avatarURLToSend = `${userAvatarURL}${userName}/media`;
-
-// Function to sent avatar
-
 import { sendAvatar } from "../profile-page/api-call-send-avatar.mjs";
 
-
 export async function displayUserProfile(userProfile) {
-
     if (!userProfile.avatar) {
         userProfile.avatar = "/assets/image-sample.jpg";
     }
@@ -18,14 +11,12 @@ export async function displayUserProfile(userProfile) {
     const profileContainer = document.querySelector("#profile-main-container");
     profileContainer.innerHTML = "";
     profileContainer.innerHTML = `
-
         <h1 class="text-center">My profile</h1>
-            
         <!-- profile avatar -->
         <div class="text-center">
         <img src="${userProfile.avatar}" class="rounded-circle border border-white" style="width: 200px; height: 200px; object-fit: cover;" alt="${userProfile.name} avatar">
         </div>
-
+        
         <!-- change avatar form -->
         <div class="container px-4 py-5 col-lg-5 col-sm-12 text-center" id="form-change-avatar-container">
         <form action="" id="form-change-avatar">
@@ -68,7 +59,6 @@ export async function displayUserProfile(userProfile) {
         changeAvatarButton.style.display = "none";
     };
 
-    // Creating avatar object and sending it to API
     form.addEventListener("submit", addAndSendAvatar);
     function addAndSendAvatar(event) {
         event.preventDefault();
@@ -80,5 +70,3 @@ export async function displayUserProfile(userProfile) {
         sendAvatar(avatarURLToSend, avatarMediaObject);
     };
 };
-
-

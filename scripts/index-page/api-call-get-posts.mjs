@@ -22,12 +22,9 @@ export async function getPosts(url) {
         console.log(response);
         console.log(posts);
         
-        // Creating a variable containing the posts array from the API call
         window.posts = posts;
-        
         displayAllPosts(posts);
         
-
     } catch(error) {
         console.log(error);
     }

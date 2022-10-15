@@ -23,13 +23,10 @@
  * ```
  */
 export function displayAllPosts(posts) {
-            
     const postsContainer = document.querySelector(".posts-container");
     postsContainer.innerHTML = "";
 
     for (let i = 0; i < posts.length; i++) {
-
-        // If the post contains no media, use a default image
         if (!posts[i].media) {
             posts[i].media = "/assets/image-sample.jpg";
         };
@@ -37,15 +34,9 @@ export function displayAllPosts(posts) {
             posts[i].author.avatar = "/assets/image-sample.jpg";
         };
 
-
-        // Formatting the dates
-        //const formattedDate = new Date(posts[i].created).toGMTString();
         const formattedDate = new Date(posts[i].created).toLocaleDateString('en-us', {month:"short", day:"numeric"});
         const formattedTime = new Date(posts[i].created).toLocaleTimeString('en-GB');
-
         
-
-        // Populating the HTML container
         postsContainer.innerHTML += `
         <div class="col">
             <div class="card h-100">
@@ -74,5 +65,4 @@ export function displayAllPosts(posts) {
         </div>
         `;
     }
-
 };
