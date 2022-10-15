@@ -28,7 +28,7 @@ To apply knowledge of JavaScript techniques to implement the front-end functiona
 
 - [Noroff API Documentation](https://noroff-api-docs.netlify.app)
 - [Noroff Social API](https://nf-api.onrender.com/docs/static/index.html#/posts/get_api_v1_social_posts_)
-- [Project management: Trello board](https://trello.com/invite/b/3p26zqGQ/a91b1d52a4ae8801c152e44908b64d9a/js2-some);
+- [Project management: Trello board](https://trello.com/invite/b/3p26zqGQ/a91b1d52a4ae8801c152e44908b64d9a/js2-some)
 
 ## Grade & Feedback from instructor
 
