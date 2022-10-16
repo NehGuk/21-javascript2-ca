@@ -39,3 +39,6 @@ export const allUsersURL = `${API_BASE_URL}/api/v1/social/profiles`;
 // Profiles: get single user
 export const singleUserURL = `${API_BASE_URL}/api/v1/social/profiles/`; //<userName>
 export const singleUserURLextra = `?_posts=true&_following=true&_followers=true`;
+
+// Send comment
+export const sendCommentURL = `${API_BASE_URL}/api/v1/social/posts/`; //<id>/comment
