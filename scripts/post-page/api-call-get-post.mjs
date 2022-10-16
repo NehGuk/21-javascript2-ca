@@ -1,6 +1,7 @@
 import { singlePostURL } from "../api/api-urls.mjs";
 import { extra } from "../api/api-urls.mjs";
 import { displayPost } from "./post-display-post.mjs";
+import { displayComments } from "./post-comments/display-comments.mjs";
 import { authFetchOptionsArray } from "../api/api-fetch-methods.mjs";
 
 const queryString = window.location.search;
@@ -19,6 +20,7 @@ export async function getPost(url) {
     const post = await response.json();
     window.post = post;
     displayPost();
+    displayComments();
 
     const buttonContainer = document.querySelector("#button-container");
     if (post.author.name === userName) {
