@@ -1,6 +1,4 @@
 export function displayUser(userInfo) {
-  console.log("Function displayUser triggered");
-
   const profileMainContainer = document.querySelector(
     "#profile-main-container"
   );
