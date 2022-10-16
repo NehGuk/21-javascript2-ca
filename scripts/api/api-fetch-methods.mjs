@@ -9,7 +9,7 @@ export const authFetchOptionsArray = [
     },
   },
 
-  // create new entry, register user
+  // create new entry, register user, send comment
   {
     method: "POST",
     headers: {
