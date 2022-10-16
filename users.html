@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JS2 Social Media | Users">
+    <title>Users</title>
+    <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script defer type="module" src="/scripts/users-page/users.mjs"></script>
+    
+    <script defer type="module" src="/scripts/logged-out-redirect.mjs"></script>
+    <script defer type="module" src="/scripts/navbar-avatar.mjs"></script>
+    <link rel="stylesheet" href="/dist/css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_package_v0/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_package_v0/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_package_v0/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_package_v0/site.webmanifest">
+    <link rel="mask-icon" href="/favicon_package_v0/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+  <!-- NAV -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html"><img src="/assets/logo/logo-horizontal.png" width="120px" alt="JS2 Social Media logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="login.html">Logout</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/profile.html">Profile</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              <a href="/profile.html"><img src="/assets/image-sample.jpg" width="32" height="32" class="rounded-circle border border-primary" style="width: 32; height: 32; object-fit: cover; border-width: 1px !important;" id="avatar-nav" alt="User avatar"></a>
+            </span>
+          </div>
+        </div>
+      </nav>
+
+  <!-- FOLLOWING -->
+  <div class="container px-4 py-5 col-lg-6">
+      <h1 class="text-center">Users</h1>
+
+      <!-- SEARCH BAR -->
+      <div class="container px-4 py-5 col-lg-8 col-sm-12 text-center">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="text" placeholder="Search..." aria-label="Search" id="search-input">
+          <button class="btn btn-outline-success" type="button" id="clear-button">Clear</button>
+        </form>
+      </div>
+
+      <!-- USER LIST -->
+      <div id="users-list-container">
+        <table class="table mt-4 mb-4">
+            <tbody id="user-list">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+  <!-- FOOTER -->
+    <div class="container">
+        <footer class="py-3 my-4">
+        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="/index.html" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="/profile.html" class="nav-link px-2 text-muted">Profile</a></li>
+            <li class="nav-item"><a href="/login.html" class="nav-link px-2 text-muted">Logout</a></li>
+        </ul>
+        <p class="text-center text-muted">Henri Kugler | JavaScript 2 Course Assignment | 2022</p>
+        </footer>
+      </div>
+</body>
+</html>

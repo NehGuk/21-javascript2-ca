@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JS2 Social Media | Welcome">
+    <title>Sign up</title>
+    <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer type="module" src="/scripts/signup-page/signup.mjs"></script>
+    <link rel="stylesheet" href="/dist/css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_package_v0/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_package_v0/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_package_v0/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_package_v0/site.webmanifest">
+    <link rel="mask-icon" href="/favicon_package_v0/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<!-- NAV -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html"><img src="/assets/logo/logo-horizontal.png" width="120px" alt="JS2 Social Media logo"></a>
+          <div class="collapse navbar-collapse" id="navbarText">
+          </div>
+        </div>
+      </nav>
+
+<!-- TOP CONTENT -->
+    <!-- SIGNUP FORM -->
+    <div class="container px-4 py-5 col-lg-4 col-sm-12 text-center">
+      <img src="/assets/logo/logo-symbol.png" alt="JS2 Social Media logo">
+      <h1 class="text-center mt-4 mb-4">Signup</h1>
+      <div class="form-signin">
+        <form action="/signup-thank-you.html" id="signupform">
+            <!-- name -->
+            <div class="form-floating mb-4">
+            <input type="text" name="name" id="username" class="form-control" placeholder="Ola Nordmann" maxlength="100" pattern="^[\w]+$" title="User name must not contain punctuation symbols apart from underscore" required>
+            <label for="name">Username</label>
+            </div>
+            <!-- email -->
+            <div class="form-floating">
+            <input type="email" name="email" id="email" class="form-control" placeholder="name@example.com" maxlength="100" pattern="^[\w\-.]+@(stud.)?noroff.no$" title="Please enter a valid stud.noroff.no or noroff.no email address" required>
+            <label for="email">Email</label>
+            </div>
+            <!-- password -->
+            <div class="form-floating">
+            <input type="password" name="password" id="password" class="form-control my-3" placeholder="Password" maxlength="20" minlength="8" pattern="^.(?=.{7,})(?=.[a-zA-Z]).*$" title="Password must be between 8 and 20 characters long" required>
+            <label class="was-validated" for="password">Password</label>
+            </div>
+            <!-- signup button -->
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
+            <br>
+            <br>
+            <!-- Already registered error message -->
+            <div class="checkbox mb-3 register-error-message">
+              <label>
+                  <p href="/login.html">Email address already registered.</p>
+              </label>
+            </div>
+            <!-- Click here to login -->
+            <div class="checkbox mb-3 login-link">
+              <label>
+                  <a href="/login.html">Click here to login!</a>
+              </label>
+            </div>
+        </form>
+      </div>
+    </div>
+
+<!-- FOOTER -->
+    <div class="container">
+        <footer class="py-3 my-4">
+        <!-- <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="/index.html" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="/profile.html" class="nav-link px-2 text-muted">Profile</a></li>
+            <li class="nav-item"><a href="/login.html" class="nav-link px-2 text-muted">Login</a></li>
+        </ul> -->
+        <p class="text-center text-muted">Henri Kugler | JavaScript 2 Course Assignment | 2022</p>
+        </footer>
+    </div>
+</body>
+</html>

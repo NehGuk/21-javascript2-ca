@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JS2 Social Media | Welcome">
+    <title>Login</title>
+    <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer type="module" src="/scripts/login-page/login.mjs"></script>
+    <link rel="stylesheet" href="/dist/css/styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_package_v0/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_package_v0/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_package_v0/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_package_v0/site.webmanifest">
+    <link rel="mask-icon" href="/favicon_package_v0/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<!-- NAV -->
+    <nav class="navbar sticky-top navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/index.html"><img src="/assets/logo/logo-horizontal.png" width="120px" alt="JS2 Social Media logo"></a>
+          <div class="collapse navbar-collapse" id="navbarText">
+          </div>
+        </div>
+      </nav>
+
+<!-- TOP CONTENT -->
+      <!-- LOGIN FORM -->
+      <div class="container px-4 py-5 col-lg-4 col-sm-12 text-center">
+        <img src="/assets/logo/logo-symbol.png" alt="JS2 Social Media logo">
+      <h1 class="text-center mt-4 mb-4">Welcome!</h1>
+        <p class="text-center">Thank you for registering. Now, login and have fun.</p>
+        <div class="form-login">
+          <form action="" id="loginform" method="GET">
+              <!-- email -->
+              <div class="form-floating">
+              <input type="email" name="email" id="email" class="form-control" placeholder="name@example.com" maxlength="100" pattern="^[\w\-.]+@(stud.)?noroff.no$" title="Please enter a valid stud.noroff.no or noroff.no email address" required>
+              <label for="email">Email</label>
+              </div>
+              <!-- password -->
+              <div class="form-floating">
+              <input type="password" name="password" id="password" class="form-control my-3" placeholder="Password" maxlength="20" pattern="^.(?=.{7,})(?=.[a-zA-Z]).*$" title="Password must be at least 8 characters long" required>
+              <label class="was-validated" for="password">Password</label>
+              </div>
+              <!-- login button -->
+              <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+              <br>
+              <br>
+              <!-- Login error message -->
+              <div class="checkbox mb-3" id="login-error-message">  
+              </div>
+              <!-- Click here to sign up -->
+              <div class="checkbox mb-3 login-link">
+                <label>
+                    <a href="/signup.html">Click here to sign up!</a>
+                </label>
+              </div>
+          </form>
+        </div>
+      </div>
+
+<!-- FOOTER -->
+    <div class="container">
+        <footer class="py-3 my-4">
+        <p class="text-center text-muted">Henri Kugler | JavaScript 2 Course Assignment | 2022</p>
+        </footer>
+    </div>
+</body>
+</html>

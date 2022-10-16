@@ -1,0 +1,35 @@
+{
+  "name": "21-javascript2-ca",
+  "version": "1.0.0",
+  "description": "My Javascript 2 Course Assignment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css & live-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NehGuk/21-javascript2-ca.git"
+  },
+  "keywords": [
+    "social",
+    "media",
+    "bootstrap",
+    "sass"
+  ],
+  "author": "Henri Kugler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NehGuk/21-javascript2-ca/issues"
+  },
+  "homepage": "https://github.com/NehGuk/21-javascript2-ca#readme",
+  "devDependencies": {
+    "jsdocs": "^1.0.0",
+    "live-server": "^1.2.2",
+    "sass": "^1.55.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.1"
+  }
+}
