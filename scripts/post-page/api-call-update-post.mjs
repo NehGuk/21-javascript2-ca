@@ -12,12 +12,9 @@ export async function updateEntry(url) {
 
     const response = await fetch(URLToBeUpdated, authGet);
     const post = await response.json();
-    console.log(response);
-    console.log(post);
-    console.log(post.title);
 
     postContainer.innerHTML = `
-        <div class="container px-4 py-5 col-lg-5 col-sm-12">
+        <div>
         <h1 class="text-center pb-3">Edit post</h1>
     
         <form id="update-post-form">

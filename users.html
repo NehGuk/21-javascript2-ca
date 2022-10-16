@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JS2 Social Media | Post">
-    <title>Post page</title>
+    <meta name="description" content="JS2 Social Media | Users">
+    <title>Users</title>
     <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer type="module" src="/scripts/post-page/post.mjs"></script>
-    <script defer type="module" src="/scripts/post-page/post-delete.mjs"></script>
-    <script defer type="module" src="/scripts/post-page/post-update.mjs"></script>
+    
+    <script defer type="module" src="/scripts/user-page/users.mjs"></script>
+    
     <script defer type="module" src="/scripts/logged-out-redirect.mjs"></script>
     <script defer type="module" src="/scripts/navbar-avatar.mjs"></script>
     <link rel="stylesheet" href="/dist/css/styles.css">
@@ -32,7 +32,7 @@
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                <a class="nav-link" aria-current="page" href="/index.html">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="login.html">Logout</a>
@@ -47,27 +47,38 @@
           </div>
         </div>
       </nav>
-  
-<!-- POST AREA -->
-<div class="container px-4 py-5 col-lg-6" id="main-post-container">
-</div>
 
-<!-- Buttons -->
-<div class="container px-4 py-0 text-center" id="button-container">
-  <button type="button" action="/post-update.html" class="btn btn-primary btn-sm update-button" id="update-button">Update post</button>
-  <button type="button" action="/index.html" class="btn btn-secondary btn-sm" id="delete-button">Delete post</button>                    
-</div>
+  <!-- FOLLOWING -->
+  <div class="container px-4 py-5 col-lg-6">
+      <h1 class="text-center">Users</h1>
 
-<!-- FOOTER -->
+      <!-- SEARCH BAR -->
+      <div class="container px-4 py-5 col-lg-8 col-sm-12 text-center">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="text" placeholder="Search..." aria-label="Search" id="search-input">
+          <button class="btn btn-outline-success" type="button" id="clear-button">Clear</button>
+        </form>
+      </div>
+
+      <!-- USER LIST -->
+      <div id="users-list-container">
+        <table class="table mt-4 mb-4">
+            <tbody id="user-list">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+  <!-- FOOTER -->
     <div class="container">
         <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
             <li class="nav-item"><a href="/index.html" class="nav-link px-2 text-muted">Home</a></li>
             <li class="nav-item"><a href="/profile.html" class="nav-link px-2 text-muted">Profile</a></li>
-            <li class="nav-item"><a href="/login" class="nav-link px-2 text-muted">Logout</a></li>
+            <li class="nav-item"><a href="/login.html" class="nav-link px-2 text-muted">Logout</a></li>
         </ul>
         <p class="text-center text-muted">Henri Kugler | JavaScript 2 Course Assignment | 2022</p>
         </footer>
-    </div>
+      </div>
 </body>
 </html>

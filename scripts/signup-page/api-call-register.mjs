@@ -3,10 +3,8 @@ export async function registerUser(url, userData) {
   try {
     const [authGet, authPost] = authFetchOptionsArray;
     authPost["body"] = JSON.stringify(userData);
-
     const response = await fetch(url, authPost);
     const json = await response.json();
-    console.log(json);
 
     const userName = json.name;
     localStorage.setItem("userName", userName);
