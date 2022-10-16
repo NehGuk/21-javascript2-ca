@@ -16,11 +16,8 @@ import { authFetchOptionsArray } from "../api/api-fetch-methods.mjs";
 export async function getPosts(url) {
   try {
     const [authGet, authPost] = authFetchOptionsArray;
-
     const response = await fetch(url, authGet);
     const posts = await response.json();
-    console.log(response);
-    console.log(posts);
 
     window.posts = posts;
     displayAllPosts(posts);

@@ -20,8 +20,6 @@ export async function getPost(url) {
     window.post = post;
     displayPost();
 
-    console.log(post.author.name);
-    console.log(userName);
     const buttonContainer = document.querySelector("#button-container");
     if (post.author.name === userName) {
       buttonContainer.style.display = "block";
