@@ -2,7 +2,7 @@ export function displayComments() {
   const postCommentsArray = post.comments;
   const userCommentsContainer = document.querySelector("#user-comments-area");
   userCommentsContainer.innerHTML = ``;
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < postCommentsArray.length; i++) {
     userCommentsContainer.innerHTML += `
     <div class="container">
     <div class="row">
