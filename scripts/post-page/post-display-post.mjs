@@ -24,8 +24,8 @@ export function displayPost() {
             <p class="card-text">${post.body}</p>
             </div>
             <div class="card-footer">
-                <img src="${post.author.avatar}" width="32" height="32" class="rounded-circle border border-primary" style="width: 32; height: 32; object-fit: cover; border-width: 1px !important; alt="${post.author.name} avatar">
-                <small class="text-muted"><strong>${post.author.name}</strong>&emsp;</small>
+                <a href="/user.html?user=${post.author.name}"><img src="${post.author.avatar}" width="32" height="32" class="rounded-circle border border-primary" style="width: 32; height: 32; object-fit: cover; border-width: 1px !important; alt="${post.author.name} avatar"></a>
+                <small class="text-muted"><a href="/user.html?user=${post.author.name}" style="text-decoration: none"><strong>${post.author.name}</strong></a>&emsp;</small>
                 <small class="text-muted" style="font-size: 0.8em">${formattedDate}, ${formattedTime}</small>
             </div>
             <div class="card-footer">

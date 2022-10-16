@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="JS2 Social Media | Profile">
-    <title>Profile</title>
+    <meta name="description" content="JS2 Social Media | User">
+    <title>User</title>
     <script defer src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script defer type="module" src="/scripts/profile-page/profile.mjs"></script>
-    <script defer type="module" src="/scripts/profile-page/profile-search-bar.mjs"></script>
-    <script defer type="module" src="/scripts/logged-out-redirect.mjs"></script>
+    
+    <script defer type="module" src="/scripts/user-page/user.mjs"></script>
+
     <script defer type="module" src="/scripts/navbar-avatar.mjs"></script>
     <link rel="stylesheet" href="/dist/css/styles.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon_package_v0/apple-touch-icon.png">
@@ -37,7 +37,7 @@
                 <a class="nav-link" href="login.html">Logout</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="/profile.html">Profile</a>
+                <a class="nav-link" href="/profile.html">Profile</a>
               </li>
             </ul>
             <span class="navbar-text">
@@ -102,29 +102,26 @@
   <br>
 
   <!-- MY POSTS -->
-  <h2 class="text-center mb-3">My posts</h2>
+  <h2 class="text-center mb-3">Posts</h2>
 
   <!-- SEARCH BAR -->
-  <div class="container px-4 py-5 col-lg-6 col-sm-12 text-center">
+  <!-- <div class="container px-4 py-5 col-lg-6 col-sm-12 text-center">
     <form class="d-flex" role="search">
       <input class="form-control me-2" type="text" placeholder="Search..." aria-label="Search" id="search-input">
       <button class="btn btn-outline-success" type="button" id="clear-button">Clear</button>
     </form>
-  </div>
+  </div> -->
 
   <!-- USER POSTS -->
   <div class="container px-4 py-3" id="error-message-container">
   </div>
 
   <div class="container px-4 py-5">    
-    <div class="row row-cols-1 row-cols-md-3 g-4" id="my-posts-container">
+    <div class="row row-cols-1 row-cols-md-3 g-4" id="user-posts-container">
     </div>
   </div>
 
-  <!-- CREATE NEW POST -->
-  <div class="text-center">
-    <a class="btn btn-primary" href="/index.html" role="button">Create new post</a>    
-  </div>
+
 
   <!-- FOOTER -->
     <div class="container">
